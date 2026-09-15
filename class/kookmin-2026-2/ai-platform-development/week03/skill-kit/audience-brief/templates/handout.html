@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #172e3d; background: #f2f5f5; font: 17px/1.8 system-ui, sans-serif; }
+    main { max-width: 880px; margin: 44px auto; padding: 48px; background: white; border-radius: 16px; }
+    .eyebrow { margin: 0; color: #087e78; font-size: 14px; font-weight: 700; }
+    h1 { margin: 10px 0 16px; font-size: clamp(28px, 5vw, 40px); line-height: 1.35; }
+    .audience { display: inline-block; margin: 0 0 22px; padding: 5px 12px; background: #e8f4f2; border-radius: 6px; }
+    h2 { font-size: 22px; margin: 0 0 10px; }
+    section { margin-top: 32px; }
+    p { margin: 0 0 12px; }
+    .body-text, .fact-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+    .facts { padding: 22px; border-left: 4px solid #087e78; background: #f1f7f6; }
+    .facts h2, .sources h2 { font-size: 19px; }
+    ul, ol { margin: 8px 0 0; padding-left: 24px; }
+    li { margin: 8px 0; }
+    .fact-id { color: #43616d; font-size: 13px; font-weight: 700; }
+    a { color: #007a73; text-underline-offset: 3px; }
+    .citations, .sources { font-size: 14px; }
+    .source-url { display: block; color: #536772; overflow-wrap: anywhere; }
+    footer { border-top: 1px solid #dfe7e9; margin-top: 34px; padding-top: 16px; color: #536772; font-size: 13px; }
+    @media (max-width: 640px) { main { margin: 0; padding: 24px; border-radius: 0; } }
+    @media print {
+      @page { size: A4; margin: 18mm; }
+      body { background: white; font-size: 11pt; }
+      main { max-width: none; margin: 0; padding: 0; border-radius: 0; }
+      h1 { font-size: 25pt; } h2 { break-after: avoid; }
+      .facts { background: white; border: 1px solid #b6cdca; padding: 14px; }
+      p, li { orphans: 3; widows: 3; }
+      a { color: inherit; } .source-url { font-size: 9pt; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">AI 서비스 사례 발표</p>
+      <h1>{{TITLE}}</h1>
+      <p class="audience">설명 대상 · {{AUDIENCE}}</p>
+    </header>
+    {{SECTIONS}}
+    <section class="facts"><h2>공통 사실</h2>{{FACTS}}</section>
+    <section class="sources"><h2>출처</h2>{{SOURCES}}</section>
+    <footer>원고와 근거의 적절성을 확인한 뒤 발표에 활용하세요.</footer>
+  </main>
+</body>
+</html>
