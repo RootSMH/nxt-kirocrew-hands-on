@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Week 03 · 내 일을 맡기고, 규칙과 스킬로 이어가기</title>
+  <title>Week 03 · 자료 종합 에이전트와 첫 업무</title>
   <style>
     :root{--paper:#F5F8FA;--ink:#163047;--teal:#087F87;--soft:#E8F3F3;--line:#D9E3E8;--muted:#506779;--white:#fff;--gold:#A76619;--goldbg:#FFF5E7;--radius:20px}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;color:var(--ink);background:var(--paper);font-family:Paperlogy,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;font-size:16px;line-height:1.75;word-break:keep-all}a{color:var(--teal);text-underline-offset:4px}button,input,textarea{font:inherit}button,a,input,textarea,summary{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #E8A744;outline-offset:4px}code{font:0.9em/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;background:#EDF2F5;border-radius:5px;padding:2px 5px;overflow-wrap:anywhere}p{margin:0 0 16px}h1,h2,h3,h4{line-height:1.35;letter-spacing:-.035em}h1{font-size:clamp(32px,4.5vw,58px);margin:18px 0 24px;font-weight:800}h2{font-size:28px;margin:0 0 14px}h3{font-size:20px;margin:28px 0 12px}h4{font-size:17px;margin:20px 0 10px}ul,ol{padding-left:23px;margin:12px 0 20px}li+li{margin-top:7px}strong{font-weight:750}.shell{max-width:1320px;margin:auto;padding:32px}.eyebrow{font-size:13px;letter-spacing:.12em;font-weight:800;color:var(--teal)}.hero{padding:34px 38px 38px;border-bottom:1px solid var(--line)}.hero p{max-width:750px;font-size:18px;color:var(--muted)}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.button,button{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--teal);border-radius:10px;background:var(--teal);color:white;font-size:14px;font-weight:700;padding:10px 16px;cursor:pointer;text-decoration:none}.button.secondary{background:white;color:var(--teal);border-color:var(--line)}button:hover,.button:hover{filter:brightness(.96)}.today{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}.today div{padding:18px 20px;background:white;border:1px solid var(--line);border-radius:14px}.today span{display:block;color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.08em}.today strong{display:block;margin-top:5px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;padding-top:34px}.sidebar{align-self:start;position:sticky;top:24px}.sidebar nav{display:grid;gap:3px;margin-top:20px}.sidebar a{font-size:14px;line-height:1.5;text-decoration:none;color:var(--muted);border-left:2px solid var(--line);padding:9px 12px}.sidebar a:hover,.sidebar a[aria-current="step"]{border-left-color:var(--teal);color:var(--teal);background:var(--soft)}.progress{background:white;border:1px solid var(--line);border-radius:14px;padding:16px}.progress strong{font-size:15px}.progress p{font-size:12px;color:var(--muted);margin:8px 0 0}progress{width:100%;height:7px;accent-color:var(--teal)}.content{min-width:0}.step{padding:32px 36px;background:white;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:24px;scroll-margin-top:24px}.step-number{font-size:12px;font-weight:800;color:var(--teal);letter-spacing:.13em;margin-bottom:10px}.lead{color:var(--muted);font-size:17px}.note,.choice,.check,.warning{padding:18px 21px;border-radius:12px;margin:18px 0;background:var(--soft)}.note p:last-child,.choice p:last-child,.check p:last-child,.warning p:last-child{margin-bottom:0}.warning{background:var(--goldbg);color:#66441F}.note-title{display:block;font-weight:750;margin-bottom:7px}.muted{color:var(--muted);font-size:14px}.mini-list{margin:8px 0 0}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{padding:20px;border:1px solid var(--line);border-radius:12px}.panel h3{margin-top:0;font-size:18px}.panel p:last-child{margin-bottom:0}.path{display:block;margin:12px 0;padding:14px 16px;border-radius:10px;background:var(--paper);font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;word-break:break-all}.steps-list{padding-left:24px}.steps-list li{padding-left:5px;margin-top:12px}details{border:1px solid var(--line);border-radius:12px;margin:14px 0;overflow:hidden}summary{cursor:pointer;padding:15px 19px;font-weight:700;background:var(--paper)}details[open]>summary{border-bottom:1px solid var(--line)}.detail-body{padding:20px}.doc{font-size:15px;line-height:1.9}.doc h1{font-size:24px;margin:0 0 20px}.doc h2{font-size:19px;margin:28px 0 12px}.doc p{margin-bottom:15px}.doc pre{font:13px/1.8 ui-monospace,Consolas,monospace;white-space:pre-wrap;word-break:break-all}.doc a{overflow-wrap:anywhere;word-break:break-word}.doc-link{font-size:13px;text-align:right;padding:0 20px 18px;margin:0}.field{display:block;margin:18px 0}.field>span{display:block;font-size:15px;font-weight:750;margin-bottom:8px}.field small{display:block;color:var(--muted);margin-top:6px;font-size:13px}textarea,input[type=text]{width:100%;border:1px solid #AABEC9;border-radius:10px;background:white;color:var(--ink);padding:13px 14px;line-height:1.65}textarea{min-height:115px;resize:vertical}input[type=text]{min-height:46px}.prompt{border:1px solid var(--line);border-radius:12px;margin:18px 0;overflow:hidden}.prompt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;background:var(--paper)}.prompt-top strong{font-size:15px}.prompt details{margin:0;border:0;border-radius:0}.prompt summary{background:white;font-size:14px;font-weight:500;border-top:1px solid var(--line)}.prompt textarea{border:0;border-radius:0;min-height:200px;font-size:14px;font-family:inherit;background:#FBFCFD}.prompt-status{min-height:24px;padding:0 18px;font-size:13px;color:var(--teal)}.prompt-status:not(:empty){padding-top:10px;padding-bottom:10px}.check{background:#F5F8FA;border-left:3px solid var(--teal)}.check ul{margin-bottom:0}.done-row{display:flex;align-items:flex-start;gap:10px;border-top:1px solid var(--line);padding-top:19px;margin-top:28px;font-size:14px;font-weight:700;cursor:pointer}.done-row input{width:19px;height:19px;accent-color:var(--teal);margin-top:3px;flex:0 0 auto}table{width:100%;border-collapse:collapse;font-size:14px;margin:18px 0}th,td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--paper)}.table-wrap{overflow-x:auto}pre.tree{white-space:pre-wrap;padding:18px;background:var(--paper);border-radius:12px;font:13px/1.9 ui-monospace,Consolas,monospace}.footer{padding:26px 12px 50px;color:var(--muted);font-size:13px}.footer h2{font-size:17px;margin:0 0 12px}.footer p{margin-bottom:14px}.skip-link{position:absolute;top:-70px;left:20px;background:var(--ink);color:white;padding:10px 20px;z-index:5}.skip-link:focus{top:12px}.end-link{display:inline-block;margin-top:12px}.no-script{margin:20px 0;padding:20px;background:var(--goldbg)}
@@ -12,44 +12,25 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{body{background:white}.shell{padding:0;max-width:none}.hero{padding:0 0 20px}.sidebar,.hero-actions,.done-row,.prompt-top button,.prompt-status{display:none}.layout{display:block}.step{break-inside:avoid;margin:15px 0;padding:20px;border-radius:0}.prompt textarea{min-height:160px}.today{grid-template-columns:repeat(4,1fr)}a{color:inherit}.footer{padding:20px 0}}
   </style>
 </head>
-<body>
-<a class="skip-link" href="#step-1">실습 안내로 이동</a>
-<div class="shell">
-<header class="hero">
-  <div class="eyebrow">AI 플랫폼 개발 · WEEK 03</div>
-  <h1>내 일을 맡기고,<br>규칙과 스킬로 이어가기</h1>
-  <p>실제 자료로 일을 해보고, 내가 확인한 기준을 남깁니다. 반복할 절차는 스킬로 만들고, 공통 규칙과 인계로 다음 작업을 이어갑니다.</p>
-  <div class="today"><div><span>01</span><strong>내 자료로 첫 업무</strong></div><div><span>02</span><strong>내 요구로 스킬 생성</strong></div><div><span>03</span><strong>규칙과 인계</strong></div><div><span>04</span><strong>자기 상황에 적용</strong></div></div>
-</header>
-<div class="layout">
-<aside class="sidebar"><div class="progress"><strong id="progress-label">내 진행 · 0 / 12</strong><progress id="progress-bar" max="12" value="0" aria-label="완료한 단계"></progress><p>직접 확인한 뒤 체크합니다.</p></div><nav aria-label="실습 단계">
-<a href="#step-1">01 · 자료 받기</a><a href="#step-2">02 · 에이전트 만들기</a><a href="#step-3">03 · 프로젝트 연결</a><a href="#step-4">04 · 첫 업무</a><a href="#step-5">05 · 내 조건과 계획</a><a href="#step-6">06 · 실행 구조</a><a href="#step-7">07 · 지침에서 코드로</a><a href="#step-8">08 · 다른 메모에 재사용</a><a href="#step-9">09 · Steering</a><a href="#step-10">10 · 인계와 새 세션</a><a href="#step-11">11 · 내 시나리오</a><a href="#step-12">12 · 저장</a>
-</nav></aside>
-<main class="content">
-<noscript><p class="warning">요청문 복사와 입력 반영에는 브라우저의 JavaScript가 필요합니다. 자료와 단계 안내는 아래에서 읽을 수 있습니다.</p></noscript>
-<section class="step" id="step-1">
-<div class="step-number">단계 01</div><h2>이번 주 자료 받기</h2><p class="lead">이미 Clone한 수업 저장소에서 시작합니다.</p>
-<ol class="steps-list"><li>터미널이 수업 저장소에 있는지 확인하고 <code>git status</code>로 변경을 살펴봅니다. 본인 작업은 먼저 커밋합니다.</li><li><code>git remote -v</code>에서 <code>upstream</code>은 강사 원본, <code>origin</code>은 자기 포크인지 확인합니다.</li><li>아래 명령을 한 줄씩 실행하고 결과를 확인합니다. 첫 줄은 이 저장소에서 처음 한 번 설정합니다.</li></ol>
-<div data-card="pull" data-title="터미널에 한 줄씩 입력"></div>
-<p><code>--no-edit</code>는 기본 병합 메시지를 사용해 편집창을 생략합니다. Pull이 완료된 것을 확인한 뒤 Push합니다.</p>
-<div class="warning"><strong>충돌이나 오류가 보이면</strong><p>기존 작업을 지우거나 다시 Clone해서 덮어쓰지 말고, 현재 메시지를 강사와 확인합니다.</p></div>
-<p>받은 폴더의 아래 파일을 브라우저로 엽니다.</p><span class="path">class/kookmin-2026-2/ai-platform-development/week03/시작하기.html</span>
-<label class="done-row"><input type="checkbox" data-step="1">이번 주 자료를 받았다.</label></section>
-<section class="step" id="step-2">
-<div class="step-number">단계 02</div><h2>이번 일을 맡길 에이전트 만들기</h2><p class="lead">Kiro Crew에서 발표 준비를 함께할 에이전트를 만듭니다.</p>
-<ol class="steps-list"><li><strong>에이전트 기능 → 에이전트 → 새 에이전트</strong>를 누릅니다.</li><li>이름은 <code>자료 종합 에이전트</code>, Agent Template은 <code>kirocrew</code>로 선택합니다.</li><li>워크스페이스는 기본값 <code>default</code>를 유지하고 <strong>만들기</strong>를 누릅니다.</li><li>만든 <code>자료 종합 에이전트</code> 카드를 열고 <strong>이 에이전트와 채팅</strong>을 눌러 세션을 시작합니다.</li></ol>
-<div class="note"><strong>채팅에서 자료 폴더를 확인합니다</strong><p>에이전트를 만든 뒤, 채팅 하단의 워크스페이스에서 이번 주 자료가 있는 폴더를 선택합니다.</p></div>
-<label class="done-row"><input type="checkbox" data-step="2">자료 종합 에이전트의 대화를 열었다.</label></section>
-<section class="step" id="step-3">
-<div class="step-number">단계 03</div><h2>week03 폴더를 워크스페이스로 연결하기</h2><p class="lead">채팅에서 실제 자료를 읽을 위치를 선택합니다.</p>
-<ol class="steps-list"><li>채팅 하단에서 <strong>자료 종합 에이전트</strong>가 선택되어 있는지 확인하고 <strong>워크스페이스 → 찾아보기</strong>를 누릅니다.</li><li><code>nxt-kirocrew-hands-on</code> 저장소 안에서 <code>class → kookmin-2026-2 → ai-platform-development → week03</code> 순서로 들어갑니다.</li><li><code>data</code>, <code>submissions</code>, <code>시작하기.html</code>이 보이는지 확인한 뒤 <strong>선택</strong>을 누릅니다.</li></ol>
-<div class="note"><strong>이후 요청에서 사용할 이름</strong><p>‘week03’은 이번 국민대 AI플랫폼개발 자료 폴더입니다. 원본은 <code>data</code>, 내 메모·계획·결과는 <code>submissions</code>에 둡니다. 뒤에서는 이곳을 ‘개인 작업 폴더’라고 부릅니다.</p></div>
-<div data-card="project" data-title="연결된 자료 확인"></div>
-<div class="check"><strong>내가 확인할 것</strong><p>채팅 하단에 자료 종합 에이전트와 week03 폴더가 표시되나요? Crew가 data와 submissions의 파일을 확인했나요?</p></div>
-<label class="done-row"><input type="checkbox" data-step="3">내 저장소의 자료가 읽히는지 확인했다.</label></section>
-<section class="step" id="step-4">
-<div class="step-number">단계 04</div><h2>자료를 보고 첫 업무 맡기기</h2><p class="lead">다음 주 발표가 있습니다. 조사 자료와 손으로 적은 메모를 보고 무엇을 먼저 해야 할지 생각해 보세요.</p>
-<details class="source-document"><summary>01 · 무엇을 준비해야 하나요?</summary><div class="detail-body doc"><h1>교수님에게 전달받은 발표안내 내용</h1>
+<body><a class="skip-link" href="#step-1">실습 안내로 이동</a><div class="shell">
+<header class="hero"><div class="eyebrow">AI 플랫폼 개발 · WEEK 03</div><h1>자료를 이해하고,<br>에이전트에게 첫 업무 맡기기</h1><p>발표 준비 자료를 살펴보고, 무엇을 맡길지 정합니다.<br>현재 단계의 요청문을 읽고 내 상황에 맞게 고친 뒤 보내세요.</p><div class="today"><div><span>01</span><strong>자료 받기</strong></div><div><span>02</span><strong>에이전트 준비</strong></div><div><span>03</span><strong>자료 이해하기</strong></div><div><span>04</span><strong>첫 업무 요청</strong></div></div></header>
+<div class="layout"><aside class="sidebar"><div class="progress"><strong id="progress-label">내 진행 · 0 / 7</strong><progress id="progress-bar" max="7" value="0" aria-label="완료한 단계"></progress><p>직접 확인한 뒤 체크합니다.</p></div><nav aria-label="실습 단계">
+<a href="#step-1">01 · 자료 받기</a>
+<a href="#step-2">02 · 에이전트 만들기</a>
+<a href="#step-3">03 · 설정 이해하기</a>
+<a href="#step-4">04 · 대화와 폴더 연결</a>
+<a href="#step-5">05 · 파일 목록 확인</a>
+<a href="#step-6">06 · 네 자료 살펴보기</a>
+<a href="#step-7">07 · 문서로 첫 업무 요청</a>
+</nav></aside><main class="content"><noscript><p class="warning">복사 버튼에는 JavaScript가 필요합니다. 요청문을 직접 선택해서 복사할 수도 있습니다.</p></noscript>
+<section class="step" id="step-1"><div class="step-number">단계 01 · 발표자료 5페이지</div><h2>이번 주 자료 받기</h2><p>지난주 Clone한 수업 저장소의 터미널에서 시작합니다. 명령을 한 줄씩 실행하고 결과를 확인하세요.</p><div class="prompt"><div class="prompt-top"><strong>먼저 상태와 원격 확인</strong><button type="button" data-copy="status">복사</button></div><div class="detail-body"><label for="prompt-status" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-status" rows="3">git status
+git remote -v</textarea></div><p class="prompt-status" id="status-status" aria-live="polite"></p></div><p><code>upstream</code>이 강사 원본 저장소 <code>nxtcloud-edu/nxt-kirocrew-hands-on</code>을 가리키는지 확인합니다. 바꾼 파일이 있으면 내용을 먼저 살펴보세요.</p><div class="prompt"><div class="prompt-top"><strong>이 저장소에서 처음 한 번 설정</strong><button type="button" data-copy="config">복사</button></div><div class="detail-body"><label for="prompt-config" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-config" rows="3">git config --local pull.rebase false</textarea></div><p class="prompt-status" id="status-config" aria-live="polite"></p></div><p>내 작업과 강사 자료의 기록을 유지하며 합치는 Merge 방식을 선택합니다. 다른 저장소의 설정은 바뀌지 않습니다.</p><div class="prompt"><div class="prompt-top"><strong>이번 주 자료 받기</strong><button type="button" data-copy="pull">복사</button></div><div class="detail-body"><label for="prompt-pull" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-pull" rows="3">git pull --no-edit upstream main</textarea></div><p class="prompt-status" id="status-pull" aria-live="polite"></p></div><p><code>--no-edit</code>는 병합 메시지 편집창을 생략합니다. 충돌을 자동으로 해결하는 옵션은 아닙니다.</p><div class="warning">오류가 보이면 파일을 지우지 말고 현재 메시지를 강사와 함께 확인하세요.</div><p>받은 저장소에서 다음 파일을 브라우저로 엽니다.</p><span class="path">class/kookmin-2026-2/ai-platform-development/week03/시작하기.html</span><label class="done-row"><input type="checkbox" data-step="1">자료를 받고 시작하기를 열었다.</label></section>
+<section class="step" id="step-2"><div class="step-number">단계 02 · 발표자료 6–7페이지</div><h2>자료 종합 에이전트 만들기</h2><p>발표 준비뿐 아니라 이후에도 내 기록과 받은 자료를 함께 정리할 에이전트입니다.</p><ol><li><strong>에이전트 기능 → 에이전트 → + 새 에이전트</strong>를 누릅니다.</li><li>아래 값을 입력합니다. 세션 색상은 원하는 색으로 선택하세요.</li></ol><table><tr><th>항목</th><th>입력·선택할 값</th></tr><tr><td>이름</td><td>자료 종합 에이전트</td></tr><tr><td>에이전트 템플릿</td><td>kirocrew</td></tr><tr><td>워크스페이스</td><td>default</td></tr><tr><td>메모리 저장소</td><td>default</td></tr></table><div class="prompt"><div class="prompt-top"><strong>트리거에 입력</strong><button type="button" data-copy="trigger">복사</button></div><div class="detail-body"><label for="prompt-trigger" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-trigger" rows="3">메모, 기록, 공지사항 등 여러 자료를 함께 읽고
+현재 상황과 다음 할 일을 정리해야 할 때</textarea></div><p class="prompt-status" id="status-trigger" aria-live="polite"></p></div><p>템플릿이 선택됐는지 확인하고 <strong>만들기</strong>를 누릅니다.</p><label class="done-row"><input type="checkbox" data-step="2">이름과 트리거, 기본 설정을 입력해 에이전트를 만들었다.</label></section>
+<section class="step" id="step-3"><div class="step-number">단계 03 · 발표자료 8–14페이지</div><h2>설정이 맡는 역할 이해하기</h2><p>발표자료의 구조도를 함께 보며 각 설정의 역할을 살펴봅니다.</p><table><tr><th>항목</th><th>의미</th></tr><tr><td>트리거</td><td>어떤 일을 이 에이전트에게 맡길지 설명합니다. 여러 에이전트 중 대상을 고를 때 참고할 호출 상황입니다.</td></tr><tr><td>에이전트 템플릿</td><td>에이전트가 사용할 기본 지침·도구·연결 설정입니다. 여러 에이전트가 같은 템플릿을 사용할 수 있습니다.</td></tr><tr><td>워크스페이스</td><td>자료를 읽고 결과를 쓰는 작업 폴더입니다. 폴더 지정만으로 접근 권한이 제한되는 것은 아닙니다.</td></tr><tr><td>메모리 저장소</td><td>이전 대화와 작업에서 정리한 기억을 남기고, 다음 작업에 필요한 내용을 다시 활용하기 위한 저장소입니다.</td></tr></table><div class="note"><strong>이번에 확인한 Kiro Crew의 범위</strong><p>워크스페이스와 메모리는 default로 진행합니다. 현재 안내상 기억은 에이전트별로 분리되지 않습니다. 이름을 따로 만들었다고 파일 접근과 기억이 모두 격리되는 것은 아닙니다.</p></div><p>권한은 서버나 AI에게 필요한 만큼만 줍니다. 기억을 저장하는 것은 모델을 다시 학습시키는 것과 다릅니다.</p><p>생성된 카드에서 이름과 연결 설정을 확인하세요. 카드의 ‘설명 없음’은 트리거와 별도 항목입니다. 이번에 확인한 버전에는 카드 설명을 입력하는 칸이 없습니다.</p><label class="done-row"><input type="checkbox" data-step="3">트리거·템플릿·워크스페이스·메모리의 역할을 구분했다.</label></section>
+<section class="step" id="step-4"><div class="step-number">단계 04 · 발표자료 15–17페이지</div><h2>대화를 열고 week03 폴더 연결하기</h2><ol class="steps-list"><li>만든 <strong>자료 종합 에이전트</strong> 카드를 엽니다.</li><li>모델은 여러 모델 중 하나를 선택하거나 기존 설정을 상속할 수 있습니다. 이번에는 상속 상태로 진행합니다. 일정과 웹훅은 이후에 다룹니다.</li><li><strong>이 에이전트와 채팅</strong>을 누릅니다.</li><li>채팅 하단에 <strong>자료 종합 에이전트</strong>가 선택됐는지 확인합니다.</li><li>옆의 <strong>workspace → 찾아보기</strong>에서 수업 저장소 안의 아래 폴더까지 들어갑니다.</li></ol><span class="path">class → kookmin-2026-2 → ai-platform-development → week03</span><p><code>data</code>와 <code>시작하기.html</code>이 보이는 <strong>week03</strong> 폴더를 선택합니다. 채팅 하단에도 week03이 표시되는지 확인하세요.</p><details><summary>저장소 위치가 헷갈리면</summary><div class="detail-body"><p>Git Pull을 했던 터미널에서 현재 경로를 확인하세요.</p><table><tr><th>터미널</th><th>명령</th></tr><tr><td>macOS · PowerShell · Git Bash</td><td><code>pwd</code></td></tr><tr><td>Windows 명령 프롬프트(cmd)</td><td><code>cd</code></td></tr></table><p>그 저장소에서 위 경로를 따라 week03까지 더 들어갑니다. Finder나 파일 탐색기로 위치를 확인해도 됩니다.</p></div></details><label class="done-row"><input type="checkbox" data-step="4">채팅 하단의 에이전트와 week03 폴더를 확인했다.</label></section>
+<section class="step" id="step-5"><div class="step-number">단계 05 · 발표자료 18페이지</div><h2>data 폴더의 파일 목록 확인하기</h2><p>자료 종합 에이전트의 대화에 짧게 물어봅니다.</p><div class="prompt"><div class="prompt-top"><strong>파일 목록 확인</strong><button type="button" data-copy="files">복사</button></div><div class="detail-body"><label for="prompt-files" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-files" rows="3">data 폴더에 어떤 파일이 있는지 확인해 줘.</textarea></div><p class="prompt-status" id="status-files" aria-live="polite"></p></div><p>응답에 아래 네 파일이 보이는지 확인하세요.</p><ul><li>교수님에게 전달받은 발표안내 내용.md</li><li>주제조사메모.md</li><li>내준비메모.png</li><li>다음메모.png</li></ul><p>문서 두 개와 이미지 두 개입니다. 목록을 확인했으면 우리가 먼저 내용을 읽어봅니다.</p><label class="done-row"><input type="checkbox" data-step="5">응답에서 문서 두 개와 이미지 두 개를 확인했다.</label></section>
+<section class="step" id="step-6"><div class="step-number">단계 06 · 발표자료 19–20페이지</div><h2>네 자료를 먼저 살펴보기</h2><h3>문서 두 개</h3><p><strong>발표안내</strong>는 무엇을 준비해야 하는지, <strong>주제조사메모</strong>는 지금까지 무엇을 조사했는지 보여줍니다. 아래 문서를 펼쳐 읽어보세요.</p><details class="source-document"><summary>01 · 무엇을 준비해야 하나요?</summary><div class="detail-body doc"><h1>교수님에게 전달받은 발표안내 내용</h1>
 <p>교수님께 전달받은 발표 과제 안내를 정리했습니다.</p>
 <p>안내일: 2026년 9월 16일<br>발표일: 2026년 9월 23일</p>
 <p>대학생이 공부하면서 겪는 불편 하나를 정해 주세요. 관련 AI 서비스 두 개를 살펴보고, 그 불편을 줄일 수 있는 자신의 개선안을 제안하는 발표입니다.</p>
@@ -71,8 +52,7 @@
 <p>자료 제목, 제공 기관, URL, 확인일을 적습니다.</p>
 <h2>준비 목표</h2>
 <p>두 파일은 <strong>9월 22일 18:00까지, 한국시간 기준</strong>으로 준비합니다.</p>
-<p>제출 경로는 별도 안내를 확인해 주세요. 파일을 준비한 상태와 실제로 전달한 상태는 구분해 기록합니다.</p></div><p class="doc-link"><a href="data/교수님에게%20전달받은%20발표안내%20내용.md">교수님에게 전달받은 발표안내 내용.md 원파일 열기 →</a></p></details>
-<details class="source-document"><summary>02 · 어떤 내용을 조사했나요?</summary><div class="detail-body doc"><h1>자료의 근거를 확인하는 학습 도우미</h1>
+<p>제출 경로는 별도 안내를 확인해 주세요. 파일을 준비한 상태와 실제로 전달한 상태는 구분해 기록합니다.</p></div><p class="doc-link"><a href="data/교수님에게%20전달받은%20발표안내%20내용.md">교수님에게 전달받은 발표안내 내용.md 원파일 열기 →</a></p></details><details class="source-document"><summary>02 · 어떤 내용을 조사했나요?</summary><div class="detail-body doc"><h1>자료의 근거를 확인하는 학습 도우미</h1>
 <p>자료 확인일: 2026년 9월 14일</p>
 <h2>내가 다루려는 문제</h2>
 <p>AI에게 요약을 받는 건 빠르다. 그런데 그 문장을 발표에 써도 되는지 확인하려면 원문을 다시 찾아야 한다.</p>
@@ -95,130 +75,23 @@
 <li><a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/">S1 — Google, New in NotebookLM: Discover sources from around the web (2025-04-02)</a></li>
 <li><a href="https://www.perplexity.ai/help-center/en/articles/10352895-how-does-perplexity-work">S2 — Perplexity, How does Perplexity work?</a></li>
 <li><a href="https://www.perplexity.ai/help-center/en/articles/20260806-understanding-source-labels">S3 — Perplexity, Understanding source labels</a></li>
-</ul></div><p class="doc-link"><a href="data/주제조사메모.md">주제조사메모.md 원파일 열기 →</a></p></details>
-<details class="source-document" open><summary>03 · 손으로 적고 고친 준비 메모</summary><div class="detail-body"><img src="data/내준비메모.png" alt="발표 준비를 적고 수정한 손글씨 메모" style="width:100%;height:auto;display:block"><p>고친 흔적과 아직 정하지 않은 부분을 직접 살펴보세요.</p><a href="data/내준비메모.png">이미지 크게 열기</a></div></details>
-<p><strong>첫 요청을 보내기 전에 메모 이미지를 대화에 첨부합니다.</strong> <code>data/내준비메모.png</code>를 채팅 입력창에 끌어 넣거나 이미지 첨부 기능을 사용하고, 첨부된 미리보기를 확인합니다.</p>
-<label class="field"><span>내가 먼저 본 것</span><textarea id="judgment" data-save placeholder="무엇부터 해야 할까요? 메모에서 바뀌었거나 애매한 부분은 무엇인가요?"></textarea></label>
-<div data-card="first" data-title="메모를 첨부하고 준비 상태 정리 요청"></div>
-<div class="check"><strong>내가 확인할 것</strong><ul><li>취소선과 수정 내용을 구분했나요?</li><li>한 일과 아직 하지 않은 일을 맞게 읽었나요?</li><li>추정한 시간과 확인된 시간을 나누고, 빠진 내용은 물어보나요?</li><li>읽기 어려운 부분을 내가 원본 이미지와 대조했나요?</li></ul></div>
-<label class="done-row"><input type="checkbox" data-step="4">첫 결과를 원자료와 대조했다.</label></section>
-<section class="step" id="step-5">
-<div class="step-number">단계 05</div><h2>내 조건을 반영해 준비 계획 만들기</h2><p class="lead">AI가 정리한 상태와 시간을 먼저 확인합니다. 잘못 읽은 곳을 고치고 내 조건을 넣습니다.</p>
-<label class="field"><span>내가 확인하거나 바꿀 내용</span><textarea id="conditions" data-save placeholder="빠진 예상시간, 실제 가능한 일정, 꼭 남기고 싶은 결과를 적으세요."></textarea></label>
-<div data-card="personal" data-title="내 확인을 반영해 계획 저장"></div>
-<p>내가 확인한 내용은 개인 메모로 남깁니다. 예상시간은 확정된 약속과 구분하고, 할 수 있는 분량인지 계획을 직접 살펴봅니다.</p>
-<div class="check"><strong>내가 확인할 것</strong><ul><li>확인하지 않은 시간이나 완료 상태를 임의로 채우지 않았나요?</li><li>개인 메모와 계획에 같은 조건이 반영됐나요?</li><li>시간이 부족하면 부족하다고 말하나요?</li><li>계산 합계가 맞아도 날짜별 배치는 따로 확인했나요?</li></ul></div>
-<p><a href="submissions/나의기준.md">나의기준.md</a>와 <a href="submissions/실습기록.md">실습기록.md</a>에는 내가 확인한 범위만 적습니다.</p>
-<label class="done-row"><input type="checkbox" data-step="5">내 조건과 확인한 결과를 파일로 남겼다.</label></section>
-<section class="step" id="step-6">
-<div class="step-number">단계 06</div><h2>방금 일은 어떻게 처리됐을까?</h2><p class="lead">실행 기록과 저장한 파일을 보고, 사람이 확인한 부분과 도구가 처리한 부분을 구분합니다.</p>
-<div data-card="structure" data-title="실제 작업 과정을 설명받기"></div>
-<div class="check"><strong>내가 확인할 것</strong><p>이미지의 의미를 읽은 것은 AI입니다. 파일 읽기·저장이나 프로그램 실행은 도구를 통해 이루어집니다. 내가 확인한 해석과 실제 실행 기록을 각각 찾을 수 있나요?</p></div>
-<label class="done-row"><input type="checkbox" data-step="6">AI·도구·사람의 역할을 실제 작업에서 찾았다.</label></section>
-<section class="step" id="step-7">
-<div class="step-number">단계 07</div><h2>간단한 지침에서 시작해 스킬 다듬기</h2><p class="lead">먼저 스킬 화면에서 MD 지침을 만듭니다. 그다음 세션에서 실제 파일을 찾아, 필요한 Python 코드와 실행 절차를 더합니다.</p>
-<h3>1. 스킬 화면에서 지침만 만들기</h3>
-<label class="field"><span>다음 메모에서도 반복하고 싶은 일</span><textarea id="repeat" data-save placeholder="메모를 어디에 다시 쓰고 싶나요? 어떤 항목으로 정리되면 쓸모가 있을까요?"></textarea></label>
-<label class="field"><span>반드시 지킬 내 판독·검토 기준</span><textarea id="skillCriteria" data-save placeholder="예: 잘 읽히지 않는 글자는 물어보기, 내가 확인한 내용과 AI의 해석을 구분하기"></textarea></label>
-<label class="field"><span>내 스킬 이름</span><input type="text" id="skillName" data-save value="memo-to-json" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" aria-describedby="skill-name-help"></label><p id="skill-name-help">영문 소문자·숫자·하이픈으로 정합니다. 같은 이름이 이미 있으면 다른 이름을 고르세요.</p>
-<ol class="steps-list"><li><strong>에이전트 기능 → 스킬 → 새 스킬 만들기</strong>를 엽니다.</li><li>위에서 정한 이름을 넣고, 설명에는 이 스킬을 언제 쓰는지 적습니다. 예: <em>손글씨 메모에서 한 일과 할 일, 확인할 내용을 정리할 때 사용한다.</em></li><li>아래 초안을 읽고 고친 뒤 <strong>지침</strong> 칸에 붙여 넣습니다.</li><li><strong>만들기</strong>를 누르고 목록에서 내 스킬을 확인합니다. 이 단계에서는 <code>SKILL.md</code>만 만듭니다.</li></ol>
-<div data-card="skillInstructions" data-title="새 스킬의 지침 칸에 넣을 초안" data-copy-label="지침 복사"></div>
-<h3>2. 세션에서 실제 스킬 파일부터 확인하기</h3>
-<p>발표 준비를 진행하던 세션으로 돌아옵니다. 다음 요청으로 <strong>방금 만든 스킬의 경로와 현재 내용부터</strong> 확인합니다.</p>
-<div data-card="locateSkill" data-title="내 스킬의 경로와 지침 확인"></div>
-<div class="check"><strong>답변을 보고 다음으로 넘어갑니다</strong><p>내가 만든 스킬 이름과 <code>SKILL.md</code>의 실제 위치가 맞나요? 방금 넣은 지침을 읽었나요? 다른 스킬이나 새로 만든 복제본을 보고 있지는 않은지 확인합니다.</p></div>
-<h3>3. 그 스킬 폴더에 Python 코드 추가하기</h3>
-<p>첫 업무에 사용한 <code>내준비메모.png</code>를 대화에 다시 첨부하고 아래 요청을 보냅니다. 이번에는 표시의 의미를 더 자세히 구분하고, 매번 같은 JSON 구조로 저장하는 기능을 더합니다.</p>
-<div data-card="addSkillScript" data-title="메모 판독 지침을 다듬고 Python 추가"></div>
-<div class="note"><strong>지침과 코드가 맡는 일</strong><p>AI는 사진에서 글자와 표시의 의미를 읽고, 애매한 내용을 나에게 질문합니다. Python은 정해진 JSON 항목과 값의 형식을 검사하고 파일로 저장합니다. 형식이 맞는 JSON도 내용은 원사진과 대조해야 합니다.</p></div>
-<p>답변에서 <code>SKILL.md</code>와 같은 스킬 폴더 안에 추가된 <code>scripts/</code>의 Python 파일을 확인합니다. 지침에는 그 코드를 언제, 어떤 입력으로 실행하고 결과를 어디에 저장하는지 적혀 있어야 합니다.</p>
-<h3>4. 첫 메모로 실행하고 확인하기</h3>
-<details id="python-ready"><summary>Python 실행 준비 확인</summary><div class="detail-body"><p>프로그램을 실행하기 전에 현재 컴퓨터의 Python 명령과 버전을 확인합니다. Mac은 <code>python3 --version</code>, Windows는 <code>py -3 --version</code> 또는 <code>python --version</code>을 확인합니다.</p><p>Python이 없다면 <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">공식 다운로드</a>에서 운영체제에 맞게 설치하고, 터미널을 다시 연 뒤 버전을 확인합니다. 만든 프로그램이 요구하는 버전과 맞는지도 확인합니다.</p></div></details>
-<div data-card="runSkill" data-title="다듬은 스킬로 첫 JSON 만들기"></div>
-<div class="check"><strong>내가 확인할 것</strong><ul><li>취소선·X·밑줄·화살표·체크표시를 문맥에 맞게 구분했나요?</li><li>AI가 읽은 내용과 내가 확인한 내용을 구분하나요? 애매한 값은 <code>null</code>과 질문으로 남기나요?</li><li>실행 기록에 방금 추가한 Python 파일이 보이나요?</li><li>잘못된 날짜·시각, 음수, 필수값 누락, 항목의 자료형 오류가 있으면 위치를 알려주고 저장을 멈추나요?</li><li>이번 사진의 문장을 코드에 고정하지 않았나요? 저장한 JSON을 사진과 대조했나요?</li></ul></div>
-<div data-card="reviewSkill" data-title="검토한 스킬과 결과에서 필요한 부분 고치기"></div>
-<label class="done-row"><input type="checkbox" data-step="7">MD 스킬을 만들고, 같은 폴더에 코드를 추가해 첫 결과를 확인했다.</label></section>
-<section class="step" id="step-8">
-<div class="step-number">단계 08</div><h2>같은 스킬을 다른 메모에 쓰기</h2><p class="lead">만든 절차가 새 사진에도 통하는지 확인합니다.</p>
-<ol class="steps-list"><li>같은 에이전트의 새 채팅을 열고 수업 저장소를 프로젝트로 선택합니다.</li><li>입력창에 <code>$</code>를 입력해 내가 만든 스킬 이름을 찾습니다.</li><li>스킬의 지침과 Python은 그대로 사용하고, 이번에 읽을 사진을 바꿉니다.</li></ol>
-<details><summary>내 스킬이 목록에 보이지 않는다면</summary><div class="detail-body"><p><strong>에이전트 기능 → 스킬</strong>에서 새로고침하고 이름을 확인합니다. 그래도 채팅에서 찾을 수 없으면 아래 요청으로 실제 경로와 현재 에이전트의 연결을 확인합니다.</p><div data-card="checkSkillConnection" data-title="현재 에이전트에서 스킬을 쓸 수 있는지 확인"></div></div></details>
-<details class="source-document"><summary>재사용할 두 번째 메모 열기</summary><div class="detail-body"><img src="data/다음메모.png" alt="발표 준비가 진행된 뒤 다시 적은 손글씨 메모" style="width:100%;height:auto;display:block"><p>완료 표시와 바뀐 내용, 아직 확실하지 않은 표현을 먼저 살펴보세요.</p><a href="data/다음메모.png">두 번째 이미지 크게 열기</a></div></details>
-<p><strong>두 번째 사진 <code>data/다음메모.png</code>를 새 대화에 첨부합니다.</strong> 첫 번째 결과를 새 사진의 정답으로 사용하지 않도록, 이번 사진에서 직접 읽힌 내용을 확인합니다.</p>
-<label class="field"><span>이번 사진에서 특히 확인할 것</span><textarea id="changedCondition" data-save placeholder="어떤 표시나 문장이 바뀌었나요? 확정하면 안 되는 부분은 무엇인가요?"></textarea></label>
-<div data-card="reuseSkill" data-title="내 스킬로 두 번째 사진 정리"></div>
-<div class="check"><strong>내가 확인할 것</strong><ul><li>같은 스킬의 지침과 프로그램이 실제로 실행됐나요?</li><li>두 결과의 JSON 항목과 상태 표현이 일관되나요?</li><li>완료·취소·수정·미확정 내용을 사진과 대조했나요?</li><li>이전 결과는 보존하고 새 결과를 따로 저장했나요?</li></ul></div>
-<label class="done-row"><input type="checkbox" data-step="8">새 사진으로 같은 절차를 실행하고 비교했다.</label></section>
-<section class="step" id="step-9">
-<div class="step-number">단계 09</div><h2>여러 작업에서 지킬 규칙 남기기</h2><p class="lead">스킬이 특정 일을 하는 절차라면, Steering은 이 프로젝트의 여러 작업에서 지킬 공통 규칙입니다.</p>
-<label class="field"><span>내 프로젝트의 공통 규칙</span><textarea id="rules" data-save placeholder="근거와 제안 구분, 확정하지 않은 정보 처리, 파일을 바꾸기 전 확인 등 실제 필요했던 기준을 적으세요."></textarea></label>
-<div data-card="designRules" data-title="공통 규칙 초안 검토"></div>
-<p>특정 사진의 답이나 오늘의 진행 상태를 공통 규칙에 넣지는 않았는지 확인합니다. 합의한 규칙만 저장합니다.</p>
-<div data-card="saveRules" data-title="Steering 저장과 연결 확인"></div>
-<div class="note"><strong>적용되는 위치 확인</strong><p>선택한 프로젝트 최상위의 <code>.kiro/steering/수업규칙.md</code>에 저장하고 현재 에이전트 템플릿의 연결도 확인합니다. 파일을 만든 뒤 같은 프로젝트를 선택한 새 채팅을 엽니다. 보통의 메모 파일을 저장했다고 자동으로 규칙이 되는 것은 아닙니다.</p></div>
-<label class="field"><span>새 채팅에서 해볼 짧은 업무</span><textarea id="ruleTest" data-save placeholder="규칙 자체를 다시 설명하지 말고, 그 규칙이 필요한 실제 요청을 적으세요. 예: 조사 메모로 발표 결론을 짧게 정리해 주세요."></textarea></label>
-<div data-card="checkRules" data-title="새 채팅에서 규칙 적용 확인"></div>
-<div class="check"><strong>내가 확인할 것</strong><p>규칙 파일이 실제로 읽힌 근거와 답변에 반영된 부분을 각각 확인합니다. AI가 “적용했다”고 말한 것만으로 완료하지 않습니다.</p></div>
-<label class="done-row"><input type="checkbox" data-step="9">공통 규칙을 저장하고 실제 적용을 확인했다.</label></section>
-<section class="step" id="step-10">
-<div class="step-number">단계 10</div><h2>인계 파일로 새 세션에서 이어가기</h2><p class="lead">어디까지 했는지와 다음 할 일을 남기면, 긴 대화를 다시 설명하지 않고 이어갈 수 있습니다.</p>
-<p><a href="submissions/인계.md">인계.md</a>에 현재 상태를 정리합니다. 인계는 진행 상황을 전달하는 문서이며, 프로젝트 공통 규칙과 역할이 다릅니다.</p>
-<div data-card="handoff" data-title="현재 상태 인계 작성"></div>
-<p>인계 파일을 직접 읽고 완료·미완료·확인할 내용을 고칩니다. 그다음 에이전트 카드에서 새 채팅을 열고 같은 프로젝트를 선택합니다.</p>
-<div data-card="resume" data-title="새 세션에서 인계 먼저 읽기"></div>
-<div class="check"><strong>내가 확인할 것</strong><p>새 세션이 실제로 파일을 읽었나요? 이해한 상태가 맞는지 확인한 뒤 다음 일 하나를 이어갑니다. 파일 저장만으로 이전 대화를 모두 기억한다고 가정하지 않습니다.</p></div>
-<label class="done-row"><input type="checkbox" data-step="10">새 세션에서 인계를 읽고 실제 일을 이어갔다.</label></section>
-<section class="step" id="step-11">
-<div class="step-number">단계 11</div><h2>내 상황에 적용하기</h2><p class="lead">지금 필요한 자기 일을 하나 고릅니다. 내가 쓸 자료와 원하는 결과가 있어야 합니다.</p>
-<p>다른 과제의 메모 정리, 행사 준비, 같은 자료를 서로 다른 청중에게 설명하는 일 등을 생각해 보세요.</p>
-<label class="field"><span>내가 실제로 하려는 일과 자료</span><textarea id="scenario" data-save placeholder="누구를 위해 어떤 일을 하나요? 사용할 실제 메모·사진·문서는 무엇인가요?"></textarea></label>
-<label class="field"><span>원하는 결과와 직접 확인할 기준</span><textarea id="scenarioResult" data-save placeholder="어떤 결과를 어디에 쓸까요? 잘 됐다고 판단할 구체적인 기준을 적으세요."></textarea></label>
-<div data-card="ownScenario" data-title="자기 자료로 다음 업무 요청"></div>
-<div class="check"><strong>내가 확인할 것</strong><p>기존 스킬을 그대로 쓸지, 고칠지, 새 절차를 만들지 이유를 정합니다. 필요한 자료를 실제로 첨부하거나 읽힌 뒤 실행하고, 결과를 확인해 지침과 인계를 갱신합니다.</p></div>
-<label class="done-row"><input type="checkbox" data-step="11">내 시나리오에서 실행한 결과와 검토를 남겼다.</label></section>
-<section class="step" id="step-12">
-<div class="step-number">단계 12</div><h2>내 작업을 저장하기</h2><p class="lead">다음에 다시 열어도 무엇을 만들고 확인했는지 알 수 있게 남깁니다.</p>
-<ul><li>내 조건과 판단, 개인 준비 계획</li><li>실제로 사용한 스킬의 지침·프로그램 사본과 메모별 JSON 결과</li><li>프로젝트 공통 규칙과 실제 적용 기록</li><li>현재 인계와 자기 시나리오 결과</li></ul>
-<p>세션에서 최종 스킬의 실제 위치를 확인하고, 그 안의 <code>SKILL.md</code>와 필요한 <code>scripts/</code>를 함께 <code>submissions/skills/내-스킬-이름/</code>에 보관합니다. 이곳은 레포에 남길 사본이며, Kiro Crew에서 사용한 원래 스킬 폴더도 유지합니다.</p>
-<div data-card="finish" data-title="실제 결과와 기록 확인 후 저장"></div>
-<p><a href="submissions/실습기록.md">실습기록.md</a>에 실제로 확인한 파일과 커밋 링크를 남깁니다. GitHub의 자기 포크에서 파일이 열리는지 마지막으로 확인합니다.</p>
-<div class="warning"><strong>커밋할 범위 확인</strong><p>본인 수업 작업만 골라 저장합니다. 홈 폴더의 앱 설정·세션·자격 정보와 다른 작업의 변경을 함께 올리지 않습니다. 아직 하지 않은 일은 인계에 남깁니다.</p></div>
-<label class="done-row"><input type="checkbox" data-step="12">자기 포크에서 작업과 기록을 확인했다.</label></section>
-</main></div>
-<footer class="footer"><p>이 자료는 공개된 공식 서비스 설명과 개인 발표 준비 상황을 수업용으로 재구성했습니다. 발표 안내는 국민대학교의 실제 과제 공지가 아니며, 손글씨 메모 이미지는 학습 상황을 위해 생성했습니다. 공개 자료의 설명과 작성자의 해석·개선 제안을 구분해 읽으세요.</p><p>이 페이지의 입력과 완료 표시는 현재 브라우저에 저장됩니다. Kiro Crew의 기억이나 프로젝트 파일에 자동으로 저장되는 것은 아닙니다.</p></footer>
-</div>
-<script>
+</ul></div><p class="doc-link"><a href="data/주제조사메모.md">주제조사메모.md 원파일 열기 →</a></p></details><h3>손글씨 메모 두 장</h3><div class="grid-2"><div class="panel"><h3>내준비메모.png · 9/16</h3><a href="data/내준비메모.png"><img src="data/내준비메모.png" alt="9월 16일 손글씨 준비 메모" style="width:100%;height:auto"></a><p>처음 적은 준비 상황과 시간 계획입니다.</p></div><div class="panel"><h3>다음메모.png · 9/20</h3><a href="data/다음메모.png"><img src="data/다음메모.png" alt="9월 20일 손글씨 진행 메모" style="width:100%;height:auto"></a><p>새로 끝낸 일과 바뀐 계획입니다.</p></div></div><p class="muted">이미지를 누르면 크게 볼 수 있습니다.</p><p>취소선·X 표시·화살표·체크·강조 표시를 문장과 함께 읽어보세요. 무엇을 고쳤고, 무엇이 끝났으며, 무엇이 남았나요?</p><div class="note"><strong>안내와 내 메모가 다르다면?</strong><p>개인 메모에는 PDF라고 잘못 적었지만, 교수님 발표안내의 요구는 HTML입니다. 안내를 기준으로 메모의 오류를 바로잡아야 합니다.</p></div><p>네 자료를 살펴봤으니, 먼저 문서 두 개로 무엇을 부탁할지 생각해 봅시다.</p><label class="done-row"><input type="checkbox" data-step="6">각 자료의 역할과 서로 다른 내용을 확인했다.</label></section>
+<section class="step" id="step-7"><div class="step-number">단계 07 · 발표자료 21페이지</div><h2>문서 두 개로 첫 업무 요청하기</h2><p>이번에는 발표안내와 주제조사메모만 읽게 합니다. 아래 요청문을 읽고 필요에 맞게 고친 뒤, <strong>자료 종합 에이전트의 같은 대화</strong>에 붙여 넣으세요.</p><div class="prompt"><div class="prompt-top"><strong>첫 업무 요청</strong><button type="button" data-copy="firstDocuments">복사</button></div><div class="detail-body"><label for="prompt-firstDocuments" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-firstDocuments" rows="10">다음 주 발표를 준비하려고 해.
+발표안내와 주제조사메모 두 문서만 읽어줘.
+
+발표 조건과 준비할 파일, 마감일을 정리해줘.
+이미 조사한 내용과 더 알아볼 내용을 나눠줘.
+무엇부터 준비하면 좋을지도 제안해줘.
+
+자료에 없는 내용은 나에게 물어봐.
+아직 파일은 바꾸지 말고, 채팅으로 먼저 보여줘.</textarea></div><p class="prompt-status" id="status-firstDocuments" aria-live="polite"></p></div><table><tr><th>요청에 담은 것</th><th>이번 요청</th></tr><tr><td>읽을 자료</td><td>발표안내와 주제조사메모 두 문서</td></tr><tr><td>원하는 결과</td><td>발표 조건, 조사 상태, 다음 준비 순서</td></tr><tr><td>진행 범위</td><td>모르는 것은 질문하고, 파일 변경 없이 채팅으로 먼저 확인</td></tr></table><div class="check"><strong>답변이 나오면 확인하세요</strong><ul><li>발표 조건과 준비할 파일, 마감일이 안내와 맞나요?</li><li>이미 조사한 내용과 더 알아볼 내용을 구분했나요?</li><li>자료에 없는 내용을 사실처럼 채워 넣지는 않았나요?</li><li>제안한 준비 순서에 동의하나요?</li></ul></div><p>답변을 읽고 강사와 함께 확인한 뒤 다음 요청을 이어갑니다.</p><label class="done-row"><input type="checkbox" data-step="7">첫 업무를 요청하고 답변을 문서와 대조했다.</label></section>
+</main></div><footer class="footer"><p>입력한 요청문과 완료 표시는 이 브라우저에 저장됩니다. Kiro Crew의 대화나 프로젝트 파일에 자동 저장되지는 않습니다.</p></footer></div><script>
 (()=>{'use strict';
-const storageKey='kmu-week03-workflow-v3';
-const value=id=>document.getElementById(id).value.trim();
-const korean='\n\n한국어로 부탁해요.';
-const prompts={
-pull:()=> 'git config --local pull.rebase false\ngit pull --no-edit upstream main\ngit push origin main',
-project:()=> '지금 연결한 week03 폴더의 자료를 확인해 주세요.\ndata와 submissions에 어떤 파일이 있는지 짧게 알려주세요.\n아직 파일은 바꾸지 말아주세요.'+korean,
-first:()=> '다음 주 발표를 준비하려고 해요.\n발표 안내와 조사 메모, 첨부한 손글씨 메모를 함께 봐주세요.\n\n제가 먼저 내린 판단은 이래요.\n'+value('judgment')+'\n\n지금까지 한 일과 남은 일, 작업할 수 있는 시간을 짧게 정리해 주세요.\n메모에서 고친 흔적이나 읽기 어려운 곳은 확정하지 말고 물어봐 주세요.\n제가 확인한 뒤 준비 계획을 세울게요.'+korean,
-personal:()=> '정리한 내용을 보고 제가 확인하거나 바꿀 부분을 적었어요.\n\n'+value('conditions')+'\n\n이 내용을 반영해 발표 준비 계획을 세워주세요.\n아직 빠진 정보가 있다면 먼저 물어봐 주세요.\n확인한 개인 메모와 준비계획을 개인 작업 폴더에 저장하고, 나의기준과 실습기록에는 지금 확인한 범위만 적어주세요.\n뒤에서 쓸 빈 기록 항목은 남겨주세요.'+korean,
-structure:()=> '방금 작업의 실행 기록을 함께 보고 싶어요.\n어떤 자료를 읽었고 어떤 도구를 사용했는지, 결과가 어디에 저장됐는지 알려주세요.\nAI가 해석한 부분, 프로그램이 처리한 부분, 제가 확인한 부분을 실제 작업에 맞춰 구분해 주세요.\n실행하지 않은 것은 실행했다고 설명하지 말아주세요.'+korean,
-skillInstructions:()=> '# '+value('skillName')+'\n\n## 이 스킬을 쓰는 일\n'+value('repeat')+'\n\n## 진행 순서\n1. 사용자가 준 손글씨 메모 이미지를 읽는다.\n2. 한 일과 할 일, 고친 내용, 확인할 질문을 나누어 정리한다.\n3. 읽기 어렵거나 뜻이 애매한 부분은 사용자에게 묻는다.\n4. 사용자가 확인한 내용을 구분해 반영한다.\n\n## 내가 정한 기준\n'+value('skillCriteria')+'\n\n한국어로 설명한다.',
-locateSkill:()=> 'Kiro Crew 스킬 화면에서 '+value('skillName')+' 스킬을 만들었어요.\n\n가장 먼저 이 스킬의 실제 폴더와 SKILL.md 경로를 찾아주세요.\n파일을 직접 읽고, 현재 지침을 짧게 설명해 주세요. 제가 화면에서 적은 내용이 맞는지 확인할게요.\n같은 이름이 여러 곳에 있으면 각각 보여주세요. 아직 파일은 수정하거나 새로 만들지 말아주세요.'+korean,
-addSkillScript:()=> '방금 확인한 '+value('skillName')+' 스킬을 더 다듬고 싶어요.\n첨부한 손글씨 메모를 읽어, 매번 같은 구조의 JSON 파일로 정리하게 해주세요.\n\n특히 취소선, X 표시, 밑줄, 화살표, 체크표시를 자세히 봐주세요.\n취소한 내용과 새로 쓴 내용을 구분하고, 밑줄은 강조인지, 체크는 완료를 뜻하는지 문맥을 확인해 주세요.\n화살표는 내용을 바꾼 것인지, 작업 순서인지, 다른 내용을 가리키는 것인지 구분해 주세요.\n애매하면 저에게 물어보고, AI가 읽은 내용과 제가 확인한 내용을 나눠 남겨주세요.\n\n이미지 해석과 확인 질문은 AI가 맡고, Python은 판독한 내용을 정해진 JSON 구조로 검사하고 저장하도록 해주세요.\n원문, 한 일, 할 일, 수정 흔적과 표시의 관계, 확인할 질문을 담을 항목을 정하고 매번 같은 항목과 자료형을 사용해 주세요.\n모르는 값은 null과 질문으로 남기고, 형식이 틀리면 오류 위치를 알려주고 저장을 멈추게 해주세요.\n\n앞에서 확인한 스킬 폴더의 scripts 안에 Python 파일을 추가해 주세요.\nSKILL.md에도 이 코드를 언제, 어떤 입력으로 실행하고 결과를 어디에 저장하는지 반영해 주세요.\n이번 사진의 문장을 코드 안에 고정하지 말고, 다른 메모에도 쓸 수 있게 만들어주세요.\n추가한 파일의 위치와 수정한 지침을 보여주세요.'+korean,
-runSkill:()=> '$'+value('skillName')+'\n\n첨부한 첫 메모를 다듬은 스킬로 정리해 주세요.\n최신 지침과 Python 파일을 직접 읽고, 실행에 쓸 Python 명령과 버전부터 확인해 주세요.\n메모에서 애매한 부분은 먼저 물어봐 주세요. 이미 제가 확인해 준 내용은 그 확인과 함께 반영해 주세요.\n\n제 확인이 끝나면 스킬 폴더의 Python으로 검사하고, week03의 submissions에 이미지 이름을 딴 JSON 파일로 저장해 주세요.\n같은 이름의 결과가 있으면 덮어쓰지 말고 알려주세요.\n실행한 Python 파일과 저장한 JSON의 위치를 보여주세요.'+korean,
-reviewSkill:()=> '사용한 스킬과 첫 JSON을 메모 사진에 대조해 검토해 주세요.\n취소선·X·밑줄·화살표·체크표시를 문맥에 맞게 읽었는지 봐주세요.\n화살표는 대체·순서·참조를 구분하고, 완료하지 않은 일을 체크표시만 보고 완료로 바꾸지 않았는지 확인해 주세요.\n\nAI가 읽은 내용과 제가 확인한 내용을 구분하고, 애매한 값은 null과 질문으로 남겨주세요.\n잘못된 날짜·시각, 음수 시간, 필수값 누락, 자료형 오류를 넣으면 오류 위치를 알려주고 저장하지 않아야 해요.\n이 기준에서 빠진 부분은 같은 스킬 폴더의 지침과 코드에 반영해 주세요.\n실제로 확인한 결과와 아직 확인하지 않은 부분을 알려주세요.'+korean,
-checkSkillConnection:()=> '제가 만든 '+value('skillName')+' 스킬이 이 채팅의 목록에서 보이지 않아요.\n스킬의 실제 경로와 현재 에이전트 설정을 읽고, 사용할 수 있는 상태인지 확인해 주세요.\n화면에서 어떤 연결이나 적용이 필요한지 먼저 알려주세요. 기존 설정은 아직 바꾸지 말아주세요.'+korean,
-reuseSkill:()=> '$'+value('skillName')+'\n\n첨부한 새 메모도 같은 JSON 구조로 정리해 주세요.\n이번에 특히 확인할 부분은 이래요.\n'+value('changedCondition')+'\n\n완료·취소·수정 표시를 구분하고, 아직 확실하지 않은 값은 추정하지 말고 물어봐 주세요.\n제 확인 뒤 같은 검사 프로그램으로 저장해 주세요. 이전 결과는 남겨두고 새 파일로 구분해 주세요.'+korean,
-designRules:()=> '이 프로젝트의 여러 작업에서 지킬 규칙을 남기고 싶어요.\n\n'+value('rules')+'\n\n기존 규칙을 먼저 읽고, 특정 스킬의 절차와 구분해 Steering 초안을 제안해 주세요.\n오늘의 진행 상황이나 특정 사진의 답이 규칙에 섞이지 않았는지도 확인해 주세요.\n아직 파일은 저장하지 말아주세요.'+korean,
-saveRules:()=> '검토한 공통 규칙을 프로젝트 최상위의 .kiro/steering/수업규칙.md로 저장해 주세요.\n기존 규칙과 설정을 먼저 읽고 필요한 내용을 반영해 주세요.\n현재 사용하는 에이전트 템플릿이 이 프로젝트의 Steering 파일을 읽도록 연결돼 있는지도 확인해 주세요.\n연결을 바꿔야 한다면 필요한 변경을 먼저 알려주세요.\n저장한 파일과 제가 새 채팅에서 확인할 것을 짧게 알려주세요.'+korean,
-checkRules:()=>value('ruleTest')+korean,
-handoff:()=> '지금 일을 다음 세션에서 이어가려고 해요.\n개인 작업 폴더의 인계 파일에 목표와 제 조건, 완료한 일과 남은 일을 정리해 주세요.\n아직 확인하지 않은 내용, 먼저 읽을 파일, 사용할 스킬과 규칙, 다음 행동을 남겨주세요.\n실제로 실행하거나 확인하지 않은 것은 완료로 쓰지 말아주세요.\n제가 읽고 고칠 수 있게 저장한 파일을 알려주세요.'+korean,
-resume:()=> '국민대 AI플랫폼개발 week03의 개인 작업 폴더에서 인계.md를 먼저 읽어주세요.\n인계에 적힌 필요한 자료도 확인하고, 현재 상태와 다음 할 일을 짧게 설명해 주세요.\n제가 이해한 내용이 맞는지 확인한 뒤 다음 일 하나를 이어갈게요.'+korean,
-ownScenario:()=> '이번에는 제 일을 해보려고 해요.\n\n할 일과 사용할 자료는 이래요.\n'+value('scenario')+'\n\n원하는 결과와 확인 기준은 이래요.\n'+value('scenarioResult')+'\n\n자료를 실제로 읽고 부족한 정보부터 물어봐 주세요.\n기존 스킬을 그대로 쓸지, 고칠지, 새로 만들지 이유와 진행 순서를 먼저 제안해 주세요.\n제가 확인한 뒤 진행하고 결과와 인계를 남길게요.'+korean,
-finish:()=> '오늘 실제로 만든 파일과 확인한 결과를 정리해 주세요.\n오늘 사용한 스킬의 실제 경로를 확인하고, 최종 SKILL.md와 필요한 scripts를 함께 week03의 submissions/skills 아래 스킬 이름의 폴더에 사본으로 남겨주세요.\n기존 사본이 있으면 차이를 먼저 보여주고, 원래 스킬 폴더는 유지해 주세요.\n\n나의기준·실습기록·인계에 현재 상태를 반영하고, 아직 못 한 일은 구분해 주세요.\n수업과 관련된 제 변경만 확인해 커밋할 파일 목록을 먼저 보여주세요.\n제가 확인한 뒤 자기 포크에 저장할게요. 다른 스킬이나 앱의 개인 설정은 포함하지 말아주세요.'+korean
-};
-const required={first:['judgment'],personal:['conditions'],skillInstructions:['repeat','skillCriteria','skillName'],locateSkill:['skillName'],addSkillScript:['skillName'],runSkill:['skillName'],checkSkillConnection:['skillName'],reuseSkill:['skillName','changedCondition'],designRules:['rules'],checkRules:['ruleTest'],ownScenario:['scenario','scenarioResult']};
-document.querySelectorAll('[data-card]').forEach(card=>{const key=card.dataset.card;card.className='prompt';const top=document.createElement('div');top.className='prompt-top';const title=document.createElement('strong');title.textContent=card.dataset.title;const button=document.createElement('button');button.type='button';button.textContent=card.dataset.copyLabel||'요청 복사';button.dataset.copy=key;top.append(title,button);const details=document.createElement('details');details.open=key==='pull';const summary=document.createElement('summary');summary.textContent=key==='skillInstructions'?'스킬 지침 읽고 수정하기':'보낼 요청문 읽고 수정하기';const box=document.createElement('textarea');box.id='prompt-'+key;box.setAttribute('aria-label',card.dataset.title);box.rows=9;details.append(summary,box);const status=document.createElement('p');status.className='prompt-status';status.id='status-'+key;status.setAttribute('aria-live','polite');card.append(top,details,status);});
-const fields=[...document.querySelectorAll('[data-save]')];const checks=[...document.querySelectorAll('[data-step]')];
-try{const saved=JSON.parse(localStorage.getItem(storageKey)||'{}');fields.forEach(el=>{if(typeof saved[el.id]==='string')el.value=saved[el.id];});checks.forEach(el=>el.checked=!!saved['step'+el.dataset.step]);}catch(e){}
-function update(){Object.entries(prompts).forEach(([key,fn])=>document.getElementById('prompt-'+key).value=fn());const count=checks.filter(el=>el.checked).length;document.getElementById('progress-label').textContent='내 진행 · '+count+' / 12';document.getElementById('progress-bar').value=count;const state={};fields.forEach(el=>state[el.id]=el.value);checks.forEach(el=>state['step'+el.dataset.step]=el.checked);try{localStorage.setItem(storageKey,JSON.stringify(state));}catch(e){}}
-fields.forEach(el=>el.addEventListener('input',update));checks.forEach(el=>el.addEventListener('change',update));update();
-document.querySelectorAll('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{const key=button.dataset.copy,status=document.getElementById('status-'+key);const missing=(required[key]||[]).find(id=>!value(id));if(missing){status.textContent='내 생각을 먼저 입력한 뒤 내용을 읽어보세요.';document.getElementById(missing).focus();return;}if((required[key]||[]).includes('skillName')&&!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value('skillName'))){status.textContent='스킬 이름은 영문 소문자·숫자·하이픈으로 적어주세요.';return;}const box=document.getElementById('prompt-'+key);try{await navigator.clipboard.writeText(box.value);status.textContent=key==='pull'?'복사했습니다. 터미널에는 한 줄씩 실행하고 결과를 확인하세요.':key==='skillInstructions'?'복사했습니다. 새 스킬 만들기의 지침 칸에 붙여 넣고 필요한 부분을 고치세요.':'복사했습니다. 내용을 읽고 필요한 부분을 바꿔 보내세요.';}catch(e){box.closest('details').open=true;box.focus();box.select();status.textContent='선택한 내용을 직접 복사해 주세요.';}}));
+const key='kmu-week03-through-21-v1';
+const boxes=[...document.querySelectorAll('.prompt textarea')], checks=[...document.querySelectorAll('[data-step]')];
+try{const saved=JSON.parse(localStorage.getItem(key)||'{}');boxes.forEach(x=>{if(typeof saved[x.id]==='string')x.value=saved[x.id]});checks.forEach(x=>x.checked=!!saved['step'+x.dataset.step]);}catch(e){}
+function save(){const state={};boxes.forEach(x=>state[x.id]=x.value);checks.forEach(x=>state['step'+x.dataset.step]=x.checked);const n=checks.filter(x=>x.checked).length;document.getElementById('progress-label').textContent='내 진행 · '+n+' / '+checks.length;document.getElementById('progress-bar').value=n;try{localStorage.setItem(key,JSON.stringify(state))}catch(e){}}
+boxes.forEach(x=>x.addEventListener('input',save));checks.forEach(x=>x.addEventListener('change',save));save();
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const id=b.dataset.copy,box=document.getElementById('prompt-'+id),status=document.getElementById('status-'+id);try{await navigator.clipboard.writeText(box.value);status.textContent='복사했습니다. 내용을 확인한 뒤 붙여 넣으세요.';}catch(e){box.focus();box.select();status.textContent='선택한 내용을 직접 복사해 주세요.'}}));
 })();
-</script>
-</body></html>
+</script></body></html>
