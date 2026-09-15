@@ -39,8 +39,16 @@
       <section class="step" id="step-1">
         <div class="step-number">단계 01</div><h2>이번 주 자료 받기</h2>
         <p class="lead">이미 Clone한 저장소에서 강사가 추가한 자료를 받습니다.</p>
-        <ol class="steps-list"><li>터미널의 현재 폴더가 <code>nxt-kirocrew-hands-on</code> 최상위인지 확인합니다.</li><li><code>git status</code>로 현재 변경을 확인합니다. 수정한 파일이 있으면 내용을 살펴보고 <strong>본인 작업만 먼저 커밋</strong>합니다.</li><li><code>git remote -v</code>에서 <code>upstream</code>이 수업 원본, <code>origin</code>이 자신의 포크인지 확인합니다.</li><li>아래 명령으로 자료를 받고 자신의 포크에도 반영합니다.</li></ol>
+        <ol class="steps-list">
+          <li>터미널의 현재 폴더가 <code>nxt-kirocrew-hands-on</code> 최상위인지 확인합니다.</li>
+          <li><code>git status</code>로 현재 변경을 확인합니다. 수정한 파일이 있으면 내용을 살펴보고 <strong>본인 작업만 먼저 커밋</strong>합니다.</li>
+          <li><code>git remote -v</code>에서 <code>upstream</code>이 수업 원본, <code>origin</code>이 자신의 포크인지 확인합니다.</li>
+          <li>이 저장소에서 처음 한 번, <code>git config --local pull.rebase false</code>로 내 작업과 새 자료를 합칠 방식을 정합니다.</li>
+          <li><code>git pull --no-edit upstream main</code>으로 자료를 받습니다. <code>--no-edit</code>는 기본 병합 메시지를 그대로 사용해 메시지 편집창을 생략합니다.</li>
+          <li>Pull이 완료된 것을 확인한 뒤 <code>git push origin main</code>으로 자신의 포크에도 반영합니다.</li>
+        </ol>
         <div class="prompt" data-prompt="pull"><div class="prompt-top"><strong>터미널에 입력</strong><button type="button" data-copy="pull">명령 복사</button></div><details open><summary>명령 보기</summary><textarea readonly aria-label="자료 받기 명령"></textarea></details><div class="prompt-status" aria-live="polite"></div></div>
+        <p>명령은 한 줄씩 결과를 확인하며 실행합니다. 첫 줄의 설정은 현재 저장소에만 적용되며, 다음부터는 Pull 명령부터 실행하면 됩니다.</p>
         <div class="warning"><strong class="note-title">충돌이나 오류가 보이면</strong><p>오류를 읽고 강사와 확인합니다. 기존 작업을 지우거나 저장소를 다시 Clone해서 덮어쓰지 않습니다.</p></div>
         <p>받은 폴더에서 아래 파일을 브라우저로 엽니다.</p><span class="path">class/kookmin-2026-2/ai-platform-development/week03/시작하기.html</span>
         <div class="check"><strong>확인할 것</strong><ul><li><code>week03</code> 안에 <code>data</code>, <code>skill-kit</code>, <code>submissions</code>가 있습니다.</li><li>자료를 받은 결과와 원격 저장소 주소를 직접 확인했습니다.</li></ul></div>
@@ -227,7 +235,7 @@
       <section class="step" id="step-9">
         <div class="step-number">단계 09</div><h2>새 자료를 받아 새 세션에서 재사용하기</h2>
         <p class="lead">강사가 추가 안내를 배포하면 이어갑니다. 새 조건이 들어와도 내 기존 판단과 작업을 유지하며 필요한 부분을 갱신합니다.</p>
-        <ol class="steps-list"><li>현재 변경을 확인하고 본인 작업을 먼저 커밋합니다.</li><li><code>git pull --no-rebase upstream main</code>으로 자료를 받고 <code>git push origin main</code>으로 자신의 포크에 반영합니다.</li><li><code>data/추가안내.md</code>를 직접 읽고 새로 필요한 준비를 찾습니다. 배포 전에는 이 파일이 없습니다.</li><li>추가 작업의 예상 시간과 내 일정 조정을 정합니다.</li><li>새 세션을 만들고 같은 저장소 프로젝트와 스킬 연결을 확인한 뒤 아래 요청을 보냅니다.</li></ol>
+        <ol class="steps-list"><li>현재 변경을 확인하고 본인 작업을 먼저 커밋합니다.</li><li><code>git pull --no-edit upstream main</code>으로 자료를 받습니다. Pull이 완료된 것을 확인한 뒤 <code>git push origin main</code>으로 자신의 포크에 반영합니다.</li><li><code>data/추가안내.md</code>를 직접 읽고 새로 필요한 준비를 찾습니다. 배포 전에는 이 파일이 없습니다.</li><li>추가 작업의 예상 시간과 내 일정 조정을 정합니다.</li><li>새 세션을 만들고 같은 저장소 프로젝트와 스킬 연결을 확인한 뒤 아래 요청을 보냅니다.</li></ol>
         <div class="prompt" data-prompt="update"><div class="prompt-top"><strong>새 세션에서 점검 다시 요청</strong><button type="button" data-copy="update">요청 복사</button></div><details><summary>보낼 요청문 보기</summary><textarea readonly aria-label="추가 안내 반영 요청"></textarea></details><div class="prompt-status" aria-live="polite"></div></div>
         <div class="check"><strong>재사용을 확인하는 방법</strong><ul><li>새 세션이 어떤 파일에서 내 조건과 현재 상태를 읽었나요?</li><li>기존에 끝낸 작업을 다시 해야 할 일로 돌리지 않았나요?</li><li>추가 요건과 내가 정한 예상 시간이 반영됐나요?</li><li>같은 스크립트에 갱신한 파일을 전달해 결과를 다시 만들었나요?</li><li>이전 결과와 새로운 결과의 차이를 설명할 수 있나요?</li></ul></div>
         <label class="done-row"><input type="checkbox" data-step="9">추가 안내를 반영해 새 세션에서 스킬을 재사용했다.</label>
@@ -262,7 +270,7 @@
     runAudience:['audienceA','audienceB','briefCriteria']
   };
   const prompts = {
-    pull: () => 'git pull --no-rebase upstream main\ngit push origin main',
+    pull: () => 'git config --local pull.rebase false\ngit pull --no-edit upstream main\ngit push origin main',
     project: () => `이번에는 국민대 AI플랫폼개발 week03 자료로 발표를 준비하려고 해요.
 연결된 프로젝트에서 week03 폴더를 찾고, 어떤 자료가 있는지 알려 주세요.
 앞으로 원자료는 data에서 읽고, 제 작업은 submissions에 남길게요.

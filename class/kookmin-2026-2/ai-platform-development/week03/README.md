@@ -12,6 +12,15 @@
 
 ## 자료 위치
 
+아직 Week03를 받지 않았다면 Clone한 수업 저장소의 터미널에서 `git status`와 `git remote -v`를 확인합니다. 수정한 파일은 본인 작업만 먼저 커밋합니다. 아래 명령을 한 줄씩 실행하고 결과를 확인합니다.
+
+```bash
+git config --local pull.rebase false
+git pull --no-edit upstream main
+```
+
+첫 줄은 이 저장소에서 처음 한 번 설정합니다. `--no-edit`는 기본 병합 메시지를 사용해 편집창을 생략합니다. Pull이 완료되면 `git push origin main`으로 자신의 포크에 반영한 뒤 `시작하기.html`을 엽니다. 충돌이나 오류가 보이면 기존 작업을 지우지 말고 강사와 확인합니다.
+
 | 위치 | 내용 |
 |---|---|
 | [시작하기.html](시작하기.html) | 단계별 안내, 자료 읽기, 수정할 조건, 요청문 복사와 확인 항목 |
