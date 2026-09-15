@@ -27,7 +27,7 @@ git pull --no-edit upstream main
 
 | 위치 | 내용 |
 |---|---|
-| [data/](data/README.md) | 발표 안내·조사 메모·손글씨 준비 메모 |
+| [data/](data/) | 발표 안내·조사 메모·손글씨 준비 메모 |
 | [시작하기.html](시작하기.html) | 스킬 생성·확인·수정과 실행을 진행하는 안내 |
 | [나의기준.md](submissions/나의기준.md) | 내 판단·조건·반복할 절차·공통 규칙 |
 | [실습기록.md](submissions/실습기록.md) | 실제 실행·검토·개선 기록 |
