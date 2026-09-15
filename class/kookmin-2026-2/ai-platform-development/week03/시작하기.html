@@ -14,7 +14,7 @@
 </head>
 <body><a class="skip-link" href="#step-1">실습 안내로 이동</a><div class="shell">
 <header class="hero"><div class="eyebrow">AI 플랫폼 개발 · WEEK 03</div><h1>자료를 이해하고,<br>에이전트에게 첫 업무 맡기기</h1><p>발표 준비 자료를 살펴보고, 무엇을 맡길지 정합니다.<br>현재 단계의 요청문을 읽고 내 상황에 맞게 고친 뒤 보내세요.</p><div class="today"><div><span>01</span><strong>자료 받기</strong></div><div><span>02</span><strong>에이전트 준비</strong></div><div><span>03</span><strong>자료 이해하기</strong></div><div><span>04</span><strong>첫 업무 요청</strong></div></div></header>
-<div class="layout"><aside class="sidebar"><div class="progress"><strong id="progress-label">내 진행 · 0 / 7</strong><progress id="progress-bar" max="7" value="0" aria-label="완료한 단계"></progress><p>직접 확인한 뒤 체크합니다.</p></div><nav aria-label="실습 단계">
+<div class="layout"><aside class="sidebar"><div class="progress"><strong id="progress-label">내 진행 · 0 / 8</strong><progress id="progress-bar" max="8" value="0" aria-label="완료한 단계"></progress><p>직접 확인한 뒤 체크합니다.</p></div><nav aria-label="실습 단계">
 <a href="#step-1">01 · 자료 받기</a>
 <a href="#step-2">02 · 에이전트 만들기</a>
 <a href="#step-3">03 · 설정 이해하기</a>
@@ -22,7 +22,7 @@
 <a href="#step-5">05 · 파일 목록 확인</a>
 <a href="#step-6">06 · 네 자료 살펴보기</a>
 <a href="#step-7">07 · 문서로 첫 업무 요청</a>
-</nav></aside><main class="content"><noscript><p class="warning">복사 버튼에는 JavaScript가 필요합니다. 요청문을 직접 선택해서 복사할 수도 있습니다.</p></noscript>
+<a href="#step-8">08 · 손글씨 메모 읽기</a></nav></aside><main class="content"><noscript><p class="warning">복사 버튼에는 JavaScript가 필요합니다. 요청문을 직접 선택해서 복사할 수도 있습니다.</p></noscript>
 <section class="step" id="step-1"><div class="step-number">단계 01 · 발표자료 5페이지</div><h2>이번 주 자료 받기</h2><p>지난주 Clone한 수업 저장소의 터미널에서 시작합니다. 명령을 한 줄씩 실행하고 결과를 확인하세요.</p><div class="prompt"><div class="prompt-top"><strong>먼저 상태와 원격 확인</strong><button type="button" data-copy="status">복사</button></div><div class="detail-body"><label for="prompt-status" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-status" rows="3">git status
 git remote -v</textarea></div><p class="prompt-status" id="status-status" aria-live="polite"></p></div><p><code>upstream</code>이 강사 원본 저장소 <code>nxtcloud-edu/nxt-kirocrew-hands-on</code>을 가리키는지 확인합니다. 바꾼 파일이 있으면 내용을 먼저 살펴보세요.</p><div class="prompt"><div class="prompt-top"><strong>이 저장소에서 처음 한 번 설정</strong><button type="button" data-copy="config">복사</button></div><div class="detail-body"><label for="prompt-config" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-config" rows="3">git config --local pull.rebase false</textarea></div><p class="prompt-status" id="status-config" aria-live="polite"></p></div><p>내 작업과 강사 자료의 기록을 유지하며 합치는 Merge 방식을 선택합니다. 다른 저장소의 설정은 바뀌지 않습니다.</p><div class="prompt"><div class="prompt-top"><strong>이번 주 자료 받기</strong><button type="button" data-copy="pull">복사</button></div><div class="detail-body"><label for="prompt-pull" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-pull" rows="3">git pull --no-edit upstream main</textarea></div><p class="prompt-status" id="status-pull" aria-live="polite"></p></div><p><code>--no-edit</code>는 병합 메시지 편집창을 생략합니다. 충돌을 자동으로 해결하는 옵션은 아닙니다.</p><div class="warning">오류가 보이면 파일을 지우지 말고 현재 메시지를 강사와 함께 확인하세요.</div><p>받은 저장소에서 다음 파일을 브라우저로 엽니다.</p><span class="path">class/kookmin-2026-2/ai-platform-development/week03/시작하기.html</span><label class="done-row"><input type="checkbox" data-step="1">자료를 받고 시작하기를 열었다.</label></section>
 <section class="step" id="step-2"><div class="step-number">단계 02 · 발표자료 6–7페이지</div><h2>자료 종합 에이전트 만들기</h2><p>발표 준비뿐 아니라 이후에도 내 기록과 받은 자료를 함께 정리할 에이전트입니다.</p><ol><li><strong>에이전트 기능 → 에이전트 → + 새 에이전트</strong>를 누릅니다.</li><li>아래 값을 입력합니다. 세션 색상은 원하는 색으로 선택하세요.</li></ol><table><tr><th>항목</th><th>입력·선택할 값</th></tr><tr><td>이름</td><td>자료 종합 에이전트</td></tr><tr><td>에이전트 템플릿</td><td>kirocrew</td></tr><tr><td>워크스페이스</td><td>default</td></tr><tr><td>메모리 저장소</td><td>default</td></tr></table><div class="prompt"><div class="prompt-top"><strong>트리거에 입력</strong><button type="button" data-copy="trigger">복사</button></div><div class="detail-body"><label for="prompt-trigger" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-trigger" rows="3">메모, 기록, 공지사항 등 여러 자료를 함께 읽고
@@ -76,7 +76,7 @@ git remote -v</textarea></div><p class="prompt-status" id="status-status" aria-l
 <li><a href="https://www.perplexity.ai/help-center/en/articles/10352895-how-does-perplexity-work">S2 — Perplexity, How does Perplexity work?</a></li>
 <li><a href="https://www.perplexity.ai/help-center/en/articles/20260806-understanding-source-labels">S3 — Perplexity, Understanding source labels</a></li>
 </ul></div><p class="doc-link"><a href="data/주제조사메모.md">주제조사메모.md 원파일 열기 →</a></p></details><h3>손글씨 메모 두 장</h3><div class="grid-2"><div class="panel"><h3>내준비메모.png · 9/16</h3><a href="data/내준비메모.png"><img src="data/내준비메모.png" alt="9월 16일 손글씨 준비 메모" style="width:100%;height:auto"></a><p>처음 적은 준비 상황과 시간 계획입니다.</p></div><div class="panel"><h3>다음메모.png · 9/20</h3><a href="data/다음메모.png"><img src="data/다음메모.png" alt="9월 20일 손글씨 진행 메모" style="width:100%;height:auto"></a><p>새로 끝낸 일과 바뀐 계획입니다.</p></div></div><p class="muted">이미지를 누르면 크게 볼 수 있습니다.</p><p>취소선·X 표시·화살표·체크·강조 표시를 문장과 함께 읽어보세요. 무엇을 고쳤고, 무엇이 끝났으며, 무엇이 남았나요?</p><div class="note"><strong>안내와 내 메모가 다르다면?</strong><p>개인 메모에는 PDF라고 잘못 적었지만, 교수님 발표안내의 요구는 HTML입니다. 안내를 기준으로 메모의 오류를 바로잡아야 합니다.</p></div><p>네 자료를 살펴봤으니, 먼저 문서 두 개로 무엇을 부탁할지 생각해 봅시다.</p><label class="done-row"><input type="checkbox" data-step="6">각 자료의 역할과 서로 다른 내용을 확인했다.</label></section>
-<section class="step" id="step-7"><div class="step-number">단계 07 · 발표자료 21페이지</div><h2>문서 두 개로 첫 업무 요청하기</h2><p>이번에는 발표안내와 주제조사메모만 읽게 합니다. 아래 요청문을 읽고 필요에 맞게 고친 뒤, <strong>자료 종합 에이전트의 같은 대화</strong>에 붙여 넣으세요.</p><div class="prompt"><div class="prompt-top"><strong>첫 업무 요청</strong><button type="button" data-copy="firstDocuments">복사</button></div><div class="detail-body"><label for="prompt-firstDocuments" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-firstDocuments" rows="10">다음 주 발표를 준비하려고 해.
+<section class="step" id="step-7"><div class="step-number">단계 07 · 발표자료 21–22페이지</div><h2>문서 두 개로 첫 업무 요청하기</h2><p>이번에는 발표안내와 주제조사메모만 읽게 합니다. 아래 요청문을 읽고 필요에 맞게 고친 뒤, <strong>자료 종합 에이전트의 같은 대화</strong>에 붙여 넣으세요.</p><div class="prompt"><div class="prompt-top"><strong>첫 업무 요청</strong><button type="button" data-copy="firstDocuments">복사</button></div><div class="detail-body"><label for="prompt-firstDocuments" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-firstDocuments" rows="10">다음 주 발표를 준비하려고 해.
 발표안내와 주제조사메모 두 문서만 읽어줘.
 
 발표 조건과 준비할 파일, 마감일을 정리해줘.
@@ -85,6 +85,14 @@ git remote -v</textarea></div><p class="prompt-status" id="status-status" aria-l
 
 자료에 없는 내용은 나에게 물어봐.
 아직 파일은 바꾸지 말고, 채팅으로 먼저 보여줘.</textarea></div><p class="prompt-status" id="status-firstDocuments" aria-live="polite"></p></div><table><tr><th>요청에 담은 것</th><th>이번 요청</th></tr><tr><td>읽을 자료</td><td>발표안내와 주제조사메모 두 문서</td></tr><tr><td>원하는 결과</td><td>발표 조건, 조사 상태, 다음 준비 순서</td></tr><tr><td>진행 범위</td><td>모르는 것은 질문하고, 파일 변경 없이 채팅으로 먼저 확인</td></tr></table><div class="check"><strong>답변이 나오면 확인하세요</strong><ul><li>발표 조건과 준비할 파일, 마감일이 안내와 맞나요?</li><li>이미 조사한 내용과 더 알아볼 내용을 구분했나요?</li><li>자료에 없는 내용을 사실처럼 채워 넣지는 않았나요?</li><li>제안한 준비 순서에 동의하나요?</li></ul></div><p>답변을 읽고 강사와 함께 확인한 뒤 다음 요청을 이어갑니다.</p><label class="done-row"><input type="checkbox" data-step="7">첫 업무를 요청하고 답변을 문서와 대조했다.</label></section>
+<section class="step" id="step-8">
+<div class="step-number">단계 08 · 발표자료 23페이지</div><h2>손글씨 메모 읽어보기</h2>
+<p>문서의 답변을 확인했으면, 자료 종합 에이전트의 같은 대화에서 이어서 요청합니다.</p>
+<div class="prompt"><div class="prompt-top"><strong>메모 이미지 읽기</strong><button type="button" data-copy="firstImage">복사</button></div>
+<div class="detail-body"><label for="prompt-firstImage" class="muted">읽고 필요한 부분을 수정하세요.</label><textarea id="prompt-firstImage" rows="3">내준비메모.png를 읽고 어떤 내용인지 알려줘.</textarea></div><p class="prompt-status" id="status-firstImage" aria-live="polite"></p></div>
+<p>답변이 나오면 <a href="data/내준비메모.png">내준비메모.png</a>를 열고 함께 읽어보세요. 내가 읽은 내용과 같은지, 잘못 읽거나 빠뜨린 부분이 있는지 확인합니다.</p>
+<label class="done-row"><input type="checkbox" data-step="8">이미지를 읽게 하고 답변을 메모 사진과 비교했다.</label>
+</section>
 </main></div><footer class="footer"><p>입력한 요청문과 완료 표시는 이 브라우저에 저장됩니다. Kiro Crew의 대화나 프로젝트 파일에 자동 저장되지는 않습니다.</p></footer></div><script>
 (()=>{'use strict';
 const key='kmu-week03-through-21-v1';
