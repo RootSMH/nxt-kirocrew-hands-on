@@ -6,10 +6,10 @@
 
 ## 자료 받기
 
-지난주 사용한 본인의 복제 저장소에서 개인 변경 사항을 먼저 확인·커밋한 뒤 업스트림 자료를 받습니다.
+지난주 사용한 본인의 복제 저장소에서 개인 변경 사항을 먼저 확인·커밋한 뒤 업스트림 자료를 받습니다. 3주차에 설정한 Merge 방식이 유지되므로 같은 저장소에서는 설정을 반복하지 않습니다.
 
 ```bash
-git pull --no-rebase --no-edit upstream main
+git pull --no-edit upstream main
 ```
 
 Crew의 작업 폴더는 `class/kookmin-2026-2/ai-platform-development/week04`로 연결합니다.
