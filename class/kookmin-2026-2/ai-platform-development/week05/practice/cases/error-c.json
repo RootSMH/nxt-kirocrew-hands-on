@@ -1,0 +1,22 @@
+{
+  "source_files": [
+    "warehouse-a.md",
+    "warehouse-b.md",
+    "warehouse-c.md"
+  ],
+  "warehouse_totals": {
+    "A": 22,
+    "B": 16,
+    "C": 16
+  },
+  "item_totals": {
+    "mug": 17,
+    "bottle": 12,
+    "sensor": 11,
+    "hub": 13
+  },
+  "grand_total": 54,
+  "low_stock_basis": "item_total",
+  "threshold": 5,
+  "low_stock": []
+}

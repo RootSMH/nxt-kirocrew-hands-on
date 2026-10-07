@@ -1,0 +1,19 @@
+.mission-route { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0; }
+.mission-route a { padding:6px 10px; background:var(--soft); border-radius:8px; font-size:14px; text-decoration:none; }
+.mission-step { border-top:1px solid var(--line); padding-top:10px; margin-top:32px; scroll-margin-top:24px; }
+.mission-step h3 { font-size:23px; }
+.mission-step h4 { font-size:17px; margin:24px 0 10px; }
+.mission-fields { padding:20px; background:#F4F8FA; border:1px solid var(--line); border-radius:14px; margin:20px 0; }
+.mission-fields label { display:block; font-weight:700; margin:18px 0 6px; }
+.mission-fields label:first-child { margin-top:0; }
+.mission-fields input { display:block; width:100%; padding:11px 13px; border:1px solid #AABEC9; border-radius:8px; font:inherit; background:white; color:var(--ink); }
+.mission-fields textarea { background:white; min-height:110px; }
+.mission-fields textarea.mission-long { min-height:230px; }
+.field-hint { color:var(--muted); font-size:14px; margin:0 0 8px; }
+.mission-figure { margin:22px 0; background:#F4F8FA; border:1px solid var(--line); border-radius:12px; padding:14px; }
+.mission-figure img { display:block; max-width:100%; max-height:590px; width:auto; height:auto; margin:auto; border-radius:7px; }
+.mission-figure figcaption { font-size:14px; color:var(--muted); margin-top:12px; line-height:1.65; }
+.mission-save-status { font-size:14px; color:var(--muted); margin-top:10px; }
+.mission-output { border-left:4px solid var(--teal); padding:10px 16px; margin:18px 0; background:var(--soft); }
+@media(max-width:760px) { .mission-fields { padding:15px; } .mission-step h3 { font-size:21px; } .mission-figure { padding:9px; } }
+@media print { .mission-route,.mission-save-status,#mission-download-status { display:none; } .mission-fields { background:white; } .mission-figure { break-inside:avoid; } }

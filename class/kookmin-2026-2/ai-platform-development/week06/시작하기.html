@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6주차 시작하기 · 반복 실행과 사람의 판단</title>
+<style>
+:root{color-scheme:light;--paper:#F5F8FA;--ink:#163047;--teal:#087F87;--soft:#E8F3F3;--line:#D9E3E8;--muted:#506779}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 Paperlogy,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;word-break:keep-all}.shell{max-width:1320px;margin:auto;padding:32px}header,main,footer{margin:0;padding:0}.hero{padding:34px 38px 38px;border-bottom:1px solid var(--line)}.eyebrow{font-size:13px;letter-spacing:.12em;font-weight:800;color:var(--teal)}h1,h2,h3{line-height:1.35;letter-spacing:-.035em}h1{font-size:clamp(32px,4.5vw,58px);margin:18px 0 24px;font-weight:800}h2{font-size:28px;margin:0 0 14px}h3{font-size:20px;margin:28px 0 12px}.hero>p{max-width:750px;font-size:18px;color:var(--muted)}p{margin:0 0 16px}a{color:#076e76}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.button,button{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--teal);border-radius:10px;background:var(--teal);color:white;padding:10px 16px;cursor:pointer;text-decoration:none}.button.secondary{background:white;color:var(--teal);border-color:var(--line)}button:disabled{cursor:wait;opacity:.65}.today{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}.today div{padding:18px 20px;background:white;border:1px solid var(--line);border-radius:14px}.today span{display:block;color:var(--teal);font-size:12px;font-weight:800}.today strong{display:block;margin-top:5px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;padding-top:34px}.sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100vh - 48px);overflow-y:auto}.sidebar nav{display:grid;gap:3px;margin-top:20px}.sidebar a{font-size:14px;line-height:1.5;text-decoration:none;color:var(--muted);border-left:2px solid var(--line);padding:9px 12px}.sidebar a:hover,.sidebar a[aria-current="step"]{border-left-color:var(--teal);color:var(--teal);background:var(--soft)}.progress{background:white;border:1px solid var(--line);border-radius:14px;padding:16px}.progress strong{font-size:15px}.progress p{font-size:12px;color:var(--muted);margin:8px 0 0}progress{width:100%;height:7px;accent-color:var(--teal)}main{min-width:0}section{padding:32px 36px;background:white;border:1px solid var(--line);border-radius:20px;margin:0 0 24px;scroll-margin-top:24px}.note{padding:18px 21px;border-radius:12px;margin:18px 0;background:var(--soft)}textarea{display:block;width:100%;min-height:150px;border:1px solid #AABEC9;border-radius:10px;padding:13px 14px;color:var(--ink);font:14px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;background:#FBFCFD;resize:vertical;overflow-wrap:anywhere;word-break:normal}.short-copy{min-height:75px}.copy-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0 22px}.copy-feedback{color:var(--muted);font-size:13px;line-height:1.6}.prompt-label{display:block;font-weight:700;margin:20px 0 8px}code{background:#EDF2F5;border-radius:5px;padding:2px 5px;font-size:.92em;overflow-wrap:anywhere}pre{padding:16px;background:#edf3f6;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}li{margin:7px 0}.table-wrap{overflow-x:auto;margin:18px 0}table{width:100%;border-collapse:collapse;text-align:left;font-size:15px}th,td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}th{background:var(--soft)}details{border-top:1px solid var(--line);padding:16px 0;margin-top:20px}summary{font-weight:700;cursor:pointer}details p{margin:14px 0 0}.done-row{display:flex;align-items:flex-start;gap:10px;border-top:1px solid var(--line);padding-top:19px;margin-top:28px;font-size:14px;font-weight:700;cursor:pointer}.done-row input{width:19px;height:19px;accent-color:var(--teal);margin-top:3px;flex:0 0 auto}footer{padding:26px 12px 50px;color:var(--muted);font-size:13px}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #E8A744;outline-offset:4px}.skip-link{position:absolute;top:-70px;left:20px;background:var(--ink);color:white;padding:10px 20px;z-index:5}.skip-link:focus{top:12px}.print-copy{display:none}
+.button,button{font-family:inherit;font-size:14px;line-height:1.5;font-weight:700}
+@media(max-width:1050px){.shell{padding:20px}.hero{padding:25px 20px}.layout{grid-template-columns:175px minmax(0,1fr);gap:20px}section{padding:28px}.today{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){body{font-size:15px}.shell{padding:12px}.hero{padding:22px 12px 28px}.hero>p{font-size:16px}.layout{display:block;padding-top:20px}.sidebar{position:static;max-height:none;margin-bottom:20px}.sidebar nav{display:flex;flex-wrap:nowrap;overflow:auto;gap:7px;padding:3px 0 8px;margin-top:12px}.sidebar a{white-space:nowrap;border:1px solid var(--line);border-radius:20px;padding:7px 12px;background:white}.sidebar a[aria-current="step"]{border-color:var(--teal)}section{padding:25px 20px;border-radius:16px}h2{font-size:24px}.today{gap:9px}.today div{padding:14px 13px;font-size:14px}.hero-actions .button{flex:1}th,td{padding:10px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:white}.shell{padding:0}.hero{padding:0 0 20px}.sidebar,.hero-actions,.done-row,.skip-link,.copy-actions{display:none}.layout{display:block}section{break-inside:auto;margin:15px 0;padding:20px;border-radius:0}.today{grid-template-columns:repeat(4,1fr)}footer{padding:20px 0}textarea.has-print-copy{display:none}.print-copy{display:block;border:1px solid var(--line);background:white;white-space:pre-wrap;word-break:break-word}.table-wrap{overflow:visible}}
+</style>
+<link rel="stylesheet" href="assets/mission/workbook.css">
+</head>
+<body>
+<a class="skip-link" href="#prepare">실습 안내로 이동</a>
+<div class="shell">
+<header class="hero" id="hero">
+  <div class="eyebrow">국민대학교 · AI플랫폼개발 · WEEK 06</div>
+  <h1>반복 실행과<br>사람의 판단</h1>
+  <p>정원 12명의 학과 AI 실습 모임을 준비합니다. 신청과 취소로 달라지는 인원과 남은 자리를 매일 확인하고, 영어·일본어 안내를 나누어 작성한 뒤 사람이 판단할 지점을 살펴봅니다.</p>
+  <div class="today">
+    <div><span>01 · 스케줄</span><strong>신청 현황 정기 점검</strong></div>
+    <div><span>02 · 병렬 위임</span><strong>영어·일본어 번역</strong></div>
+    <div><span>03 · 가드레일</span><strong>명령 차단과 통과</strong></div>
+    <div><span>04 · HITL</span><strong>선택 체험과 승인 관찰</strong></div>
+  </div>
+  <div class="hero-actions"><a class="button" href="#prepare">수업 시작하기</a></div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="progress"><strong id="progress-label">내 진행 · 0 / 9</strong><progress id="progress-bar" max="9" value="0" aria-label="완료한 단계"></progress><p>직접 확인한 단계만 체크하세요.<br>새로 열면 체크가 초기화됩니다.</p></div>
+  <nav aria-label="수업 단계">
+    <a href="#prepare">01 · 실습 폴더 준비</a>
+    <a href="#schedule-link">02 · 지난주 DAG 연결</a>
+    <a href="#schedule">03 · 스케줄 직접 생성</a>
+    <a href="#parallel">04 · 영어·일본어 위임</a>
+    <a href="#guardrail">05 · 차단 규칙 등록</a>
+    <a href="#guardrail-test">06 · 차단과 통과 비교</a>
+    <a href="#question">07 · 질문 카드 체험</a>
+    <a href="#approval">08 · 승인 흐름 관찰</a>
+    <a href="#mission-submission">09 · 미션 수행과 제출</a>
+  </nav>
+</aside>
+<main>
+<section id="prepare">
+  <h2>1. 실습 폴더 준비</h2>
+  <p>Kiro Crew의 작업 폴더를 실습 저장소 안의 <code>week06</code>으로 맞춥니다. 아래 요청의 경로는 모두 이 폴더를 기준으로 합니다. 입력 자료를 먼저 열고, 각 단계의 결과 파일과 실행 화면을 함께 확인하세요.</p>
+  <ul>
+    <li><a href="practice/%EB%AA%A8%EC%9E%84%EC%A1%B0%EA%B1%B4.md">모임조건.md</a>: 날짜, 장소, 준비물과 신청 방법</li>
+    <li><a href="practice/%EC%8B%A0%EC%B2%AD%ED%98%84%ED%99%A9.csv">신청현황.csv</a>: 신청자별 신청·취소 상태</li>
+    <li><a href="practice/%EB%AA%A8%EC%9E%84%EC%95%88%EB%82%B4_%EC%9B%90%EB%AC%B8.md">모임안내_원문.md</a>: 영어·일본어로 번역할 한국어 안내문</li>
+  </ul>
+  <p>입력 자료는 <code>practice/</code>에, 자신이 실행해 만든 결과는 <code>submissions/</code>에 둡니다.</p>
+  <p>폴더의 전체 경로를 찾는 방법은 <a href="#schedule-path">3번의 폴더 경로 안내</a>에서 따라 할 수 있습니다.</p>
+</section>
+<section id="schedule-link">
+  <h2>2. 지난주 DAG의 정기 실행 연결</h2>
+  <p>강사 화면에서 W05의 기존 창고 재고 집계 작업을 엽니다. Task Runner 우측 상단의 <strong>정기 실행</strong>을 선택하고, 스케줄 화면의 Details에서 작업 메시지, 실행 간격, 담당 에이전트를 확인하고, 이 작업의 승인 항목을 자동승인으로 선택해 저장합니다. 수동 승인 상태에서는 파일 읽기·쓰기 도구의 승인을 기다리며 스케줄이 멈출 수 있습니다. 아래의 최소 컨텍스트도 살펴봅니다. 메시지와 입력 파일만으로 수행할 수 있는 작업은 이 설정을 켜고 ON 상태인지 확인합니다. 에이전트는 계속 실행되지만 저장된 메모리·학습 내용·스티어링·스킬·이전 세션 기록을 불러오지 않아, 이전 맥락을 읽는 비용을 줄입니다. 스킬이나 저장된 맥락에 의존하는 작업은 끔(OFF)으로 둡니다.</p>
+  <p>계산 방식이 정해진 집계는 에이전트 대신 스크립트를 직접 실행하도록 만들 수도 있습니다. AI에게 스크립트를 만들게 한 뒤, 반복 실행은 그 스크립트에 맡길 수 있습니다. 다음 단계에서는 모임 신청 현황을 점검하는 에이전트 스케줄을 직접 만듭니다.</p>
+</section>
+<section id="schedule">
+  <h2>3. 스케줄 뷰에서 신청 현황 점검 만들기</h2>
+  <p>스케줄 작업이 내 자료를 찾을 수 있도록 <strong>week06 폴더의 전체 주소(절대경로)</strong>부터 확인합니다. 폴더 이름이 같아도 저장 위치는 사람마다 다릅니다.</p>
+  <h3 id="schedule-path">3-1. 내 week06 폴더 찾고 경로 복사하기</h3>
+  <p>파일 탐색기나 Finder에서 실습 자료를 저장한 폴더를 엽니다. 위치가 기억나지 않으면 <strong>다운로드</strong> 또는 <strong>바탕 화면</strong>부터 확인하세요. ZIP으로 받았다면 먼저 압축을 풉니다.</p>
+  <p>실습 저장소 안에서 다음 폴더를 차례로 엽니다.</p>
+  <pre><code>class → kookmin-2026-2 → ai-platform-development → week06</code></pre>
+  <p><code>week06</code> 안에 <strong>시작하기.html</strong> 파일과 <strong>practice</strong> 폴더가 보이면 맞게 찾았습니다. 아래에서 자신의 컴퓨터에 맞는 항목을 펼쳐 따라 하세요.</p>
+  <details><summary>Windows · 경로 복사하고 PowerShell 열기</summary>
+    <ol>
+      <li>파일 탐색기에서 찾은 <code>week06</code> 폴더를 열어 둡니다.</li>
+      <li><strong>Alt + D</strong>를 누르면 위쪽 주소 표시줄에 전체 경로가 선택됩니다. <strong>Ctrl + C</strong>로 복사합니다. <code>C:\</code> 또는 <code>D:\</code>처럼 시작하는 폴더 주소입니다.</li>
+      <li>작업 표시줄의 <strong>시작</strong>에서 <strong>PowerShell</strong>을 검색해 실행합니다. 열린 창에서 아래 3-2를 진행합니다.</li>
+    </ol>
+  </details>
+  <details><summary>Mac · 경로 복사하고 터미널 열기</summary>
+    <ol>
+      <li>Finder에서 찾은 <code>week06</code> 폴더를 열어 둡니다.</li>
+      <li><strong>⌘ + ↑</strong>로 한 단계 위로 이동한 뒤 <strong>week06 폴더 자체를 한 번 클릭</strong>해 선택합니다. 안에 있는 파일을 선택하지 않습니다.</li>
+      <li><strong>⌥ + ⌘ + C</strong>(Option + Command + C)로 폴더의 전체 경로를 복사합니다. 보통 <code>/Users/</code>로 시작합니다.</li>
+      <li><strong>⌘ + Space</strong>를 누르고 <strong>터미널</strong>을 검색해 실행합니다. 열린 창에서 아래 3-2를 진행합니다.</li>
+    </ol>
+  </details>
+  <h3>3-2. cd로 이동하고 pwd로 확인하기</h3>
+  <p>다음 명령은 <strong>PowerShell 또는 터미널 창</strong>에 입력합니다. <code>cd</code>는 작업할 폴더로 이동하는 명령, <code>pwd</code>는 지금 있는 폴더의 전체 경로를 보여 주는 명령입니다.</p>
+  <ol>
+    <li><code>cd ""</code>를 입력하고 두 큰따옴표 사이에 방금 복사한 경로를 붙여 넣습니다. Windows는 <strong>Ctrl + V</strong>, Mac은 <strong>⌘ + V</strong>로 붙여 넣습니다. 큰따옴표는 경로에 공백이 있어도 하나의 주소로 읽게 해 줍니다.</li>
+    <li>완성된 <code>cd "실제 경로"</code> 명령에서 <strong>Enter</strong>를 누릅니다. 별도 메시지 없이 다음 입력 줄이 나와도 정상입니다.</li>
+    <li>이어서 <code>pwd</code>를 입력하고 <strong>Enter</strong>를 누릅니다. 출력된 경로의 마지막 폴더가 <code>week06</code>인지 확인합니다.</li>
+  </ol>
+  <p><strong>입력 모양 예시</strong> — 아래의 <code>minji</code>와 저장 위치는 예시입니다. 반드시 앞에서 복사한 자신의 경로를 사용하세요. 두 명령은 한 줄씩 실행합니다.</p>
+  <pre><code>Windows PowerShell 예시
+cd "C:\Users\minji\Downloads\nxt-kirocrew-hands-on\class\kookmin-2026-2\ai-platform-development\week06"
+pwd
+
+Mac 터미널 예시
+cd "/Users/minji/Downloads/nxt-kirocrew-hands-on/class/kookmin-2026-2/ai-platform-development/week06"
+pwd</code></pre>
+  <p class="note"><strong>출력에서 경로만 복사하세요.</strong> PowerShell의 <code>Path</code> 제목과 밑줄, 입력 줄의 <code>PS …&gt;</code>나 <code>$</code> 표시는 제외합니다. <code>cd</code>에서 “경로를 찾을 수 없음”이 나오면 파일 탐색기나 Finder에서 폴더 경로를 다시 복사해 넣습니다. <code>pwd</code>만 실행하면 터미널을 처음 열었을 때의 폴더가 나올 수 있으므로, 먼저 <code>cd</code>로 이동하세요.</p>
+  <details><summary>Windows에서 명령 프롬프트(cmd)를 열었다면</summary>
+    <p>위 안내는 PowerShell 기준입니다. cmd에서는 <code>pwd</code> 대신 <code>cd</code>만 입력하면 현재 경로가 나옵니다. 폴더 이동은 드라이브까지 바뀌도록 <code>cd /d "복사한 경로"</code>를 사용합니다.</p>
+  </details>
+  <h3>3-3. 확인한 경로로 스케줄 등록하기</h3>
+  <p>수업 중 반복 실행을 확인할 수 있도록 5분 간격으로 등록합니다. 실제 운영에서는 주간 스케줄의 모든 요일을 선택하고 09:00, Asia/Seoul로 설정해 매일 점검할 수 있습니다.</p>
+  <div class="table-wrap"><table><thead><tr><th scope="col">항목</th><th scope="col">설정</th></tr></thead><tbody>
+    <tr><th scope="row">작업명</th><td>AI 실습 모임 신청 현황</td></tr>
+    <tr><th scope="row">반복</th><td>실행 간격 → 5 → 분</td></tr>
+    <tr><th scope="row">에이전트</th><td>default</td></tr>
+    <tr><th scope="row">승인</th><td>자동승인 — 이 스케줄의 파일 읽기·보고서 생성</td></tr>
+  </tbody></table></div>
+  <p>스케줄 화면에는 작업 폴더 입력란이 없습니다. 아래 프롬프트를 복사해 작업의 <strong>메시지</strong> 칸에 붙여 넣고, 첫 줄의 <code>[내 week06 절대경로]</code>를 <strong>대괄호까지 지운 뒤</strong> 방금 확인한 전체 경로로 바꿉니다. <code>cd</code> 명령과 큰따옴표는 넣지 않습니다.</p>
+  <label class="prompt-label" for="prompt-schedule">작업 프롬프트</label>
+  <textarea id="prompt-schedule" readonly>작업 폴더: [내 week06 절대경로]
+
+이 폴더의 practice/모임조건.md와 practice/신청현황.csv를 읽고
+모임 신청 현황을 10줄 이내로 요약해줘.
+현재 실행 시각을 Asia/Seoul 기준으로 확인하고 보고서에 표시해줘.
+상태가 '신청'인 행만 현재 신청 인원으로 세고, '취소'는 따로 집계해줘.
+정원은 모임조건에서 읽고, 남은 자리는 정원에서 현재 신청 인원을 빼서
+계산하되 최소 0석으로 표시해줘. 정원 초과 인원이 있으면 따로 알려줘.
+신청 마감 일시와 실행 시각을 비교해 남은 기간을 계산하고,
+마감 전이면 '접수 중', 마감 시각부터는 '마감됨'으로 표시해줘.
+실행할 때마다 두 입력 파일을 다시 읽고, 이전 보고서에서 추측하지 마.
+submissions/schedule/신청요약.md를 현재 결과로 갱신해줘.</textarea>
+  <div class="copy-actions"><button type="button" data-copy="prompt-schedule">프롬프트 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+  <p>자동승인으로 저장한 뒤 다음 실행 시각을 확인합니다. 첫 실행을 기다리거나 <strong>지금 실행</strong>으로 먼저 확인합니다. 실행 중 멈춘다면 <strong>상단 벨 알림</strong>에 기존 승인 대기가 남았는지 확인합니다.</p>
+  <h3>3-4. 채팅 기록과 결과 파일 확인하기</h3>
+  <p><code>submissions/schedule/신청요약.md</code>를 열어 <strong>현재 신청 7명, 취소 1명, 정원 12명, 남은 자리 5석</strong>인지 확인합니다. 모임의 정원과 현재 신청 인원은 다릅니다.</p>
+  <p>채팅의 「Cron: AI 실습 모임 신청 현황」에서 실행별 기록을 확인합니다. 신청요약.md는 매번 최신 결과로 갱신됩니다. 입력 자료가 그대로라면 인원은 같고, 실행 시각과 마감까지 남은 시간만 바뀝니다. 보고서에 신청 마감 <strong>2026년 10월 14일 18:00</strong>이 표시되는지 확인합니다. 마감 시각이 지났다면 <strong>마감됨</strong>으로 표시합니다.</p>
+  <h3>3-5. 신청 현황을 바꾸고 다시 실행하기</h3>
+  <p>이제 신청자 2명이 늘고 기존 신청자 1명이 취소한 상황을 만들어 봅니다. 파일 탐색기나 Finder에서 <code>week06 → practice</code>로 이동합니다.</p>
+  <ol>
+    <li><code>신청현황.csv</code>를 마우스 오른쪽 버튼으로 누르고 <strong>연결 프로그램 → 텍스트 편집기</strong>로 엽니다. Windows는 메모장, Mac은 텍스트 편집기를 사용할 수 있습니다.</li>
+    <li><code>R003,박서연,신청</code> 행의 마지막 값을 바꿔 <code>R003,박서연,취소</code>로 만듭니다. 이 행을 지우거나 같은 사람을 새 행으로 추가하지 않습니다.</li>
+    <li>파일의 마지막 줄 다음에 아래 두 줄을 붙여 넣습니다. 맨 위의 <code>신청ID,이름,상태</code> 제목 줄은 한 번만 둡니다.</li>
+  </ol>
+  <label class="prompt-label" for="registration-additions">추가할 신청자 2명</label>
+  <textarea class="short-copy" id="registration-additions" readonly>R009,오지훈,신청
+R010,임채원,신청</textarea>
+  <div class="copy-actions"><button type="button" data-copy="registration-additions">추가할 두 줄 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+  <ol start="4">
+    <li><strong>Ctrl + S</strong>(Windows) 또는 <strong>⌘ + S</strong>(Mac)로 같은 파일에 저장합니다. 파일 이름과 확장자 <code>신청현황.csv</code>를 유지합니다.</li>
+    <li>다음 5분 간격의 자동 실행을 기다립니다. 바로 확인하려면 같은 스케줄의 <strong>지금 실행</strong>을 누릅니다. 실행을 마치면 <code>submissions/schedule/신청요약.md</code>를 다시 엽니다.</li>
+  </ol>
+  <div class="table-wrap"><table><thead><tr><th scope="col">집계</th><th scope="col">첫 실행</th><th scope="col">변경 후 재실행</th></tr></thead><tbody>
+    <tr><th scope="row">현재 신청</th><td>7명</td><td>8명</td></tr>
+    <tr><th scope="row">취소</th><td>1명</td><td>2명</td></tr>
+    <tr><th scope="row">남은 자리</th><td>5석</td><td>4석</td></tr>
+  </tbody></table></div>
+  <p>새 신청 2명에서 취소 1명을 빼면 현재 신청은 1명 늘어납니다. <strong>같은 요청을 실행해도 새로 읽은 데이터에 따라 보고서가 달라지는지</strong> 확인하세요.</p>
+  <p class="note">두 번의 실행 기록과 갱신된 보고서를 확인한 뒤 등록한 스케줄을 <strong>일시 중지</strong>하세요.</p>
+</section>
+<section id="parallel">
+  <h2>4. 영어·일본어 번역을 병렬 위임하기</h2>
+  <h3>실행 전 설정</h3>
+  <p>터미널에서 아래 명령을 실행합니다. 이 값은 작업당 메모리 할당량이 아니라 서브에이전트를 시작하기 위한 <strong>최소 여유 메모리 기준</strong>입니다.</p>
+  <label class="prompt-label" for="memory-setting">로컬 기준 설정과 확인</label>
+  <textarea class="short-copy" id="memory-setting" readonly>kirocrew config set --local agent.spawn_min_memory_gb 1.0
+kirocrew config get agent.spawn_min_memory_gb</textarea>
+  <div class="copy-actions"><button type="button" data-copy="memory-setting">설정 명령 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+  <p>마지막 출력이 <code>1.0</code>인지 확인합니다. CLI가 없다면 기존 <code>config.local.json</code>(기본 경로: <code>~/.kiro/crew/config.local.json</code>)의 <code>agent</code> 항목 안에 <code>"spawn_min_memory_gb": 1.0</code>만 추가·수정하고, 다른 설정은 그대로 둡니다.</p>
+  <h3>두 작업자에게 번역 위임</h3>
+  <p>채팅에서 아래 요청을 입력합니다. 영어·일본어를 두 서브에이전트에 병렬로 맡깁니다. 번역문뿐 아니라 실제 위임과 결과 회수 과정을 확인합니다.</p>
+  <label class="prompt-label" for="prompt-parallel">병렬 번역 프롬프트</label>
+  <textarea id="prompt-parallel" readonly>practice/모임안내_원문.md를 영어·일본어로 번역해줘.
+서브에이전트 두 개에 영어와 일본어를 하나씩 나누어 병렬로 맡겨줘.
+각 작업자에게 practice/모임조건.md와 같은 한국어 원문을 전달해줘.
+
+영어 담당은 submissions/parallel/영어.md,
+일본어 담당은 submissions/parallel/일본어.md에 저장해줘.
+
+결과 형식은 제목, 요약, 모임 정보, 신청 방법의 순서로 통일해줘.
+요약은 한 문단으로 적고, 모임 정보는 일정, 장소, 정원, 준비물,
+Wi-Fi, 참가비, 진행 언어, 참여 대상을 담은 표로 만들어줘.
+신청 방법에는 신청 방식과 마감을 적어줘.
+사실은 유지하고 표현만 맡은 언어로 바꿔줘.
+번역 언어와 관계없이 모임은 한국어로 진행한다는 사실을 담아줘.
+
+두 결과가 돌아오면 부모 에이전트가 언어별 제목 아래 모아
+submissions/parallel/다국어안내.md를 만들어줘.</textarea>
+  <div class="copy-actions"><button type="button" data-copy="prompt-parallel">프롬프트 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+  <p>서브에이전트 위임과 파일 읽기·쓰기 승인 요청이 나타나면, 내용을 확인하고 해당 요청을 한 번 승인합니다.</p>
+  <h3>확인할 것</h3>
+  <ul><li>실행 화면에 언어별 작업이 나뉘어 표시되는가?</li><li>각 담당자의 결과 파일이 따로 생성되었는가?</li><li>부모가 두 결과를 받은 뒤 종합했는가?</li><li>날짜·시각·비용·한국어 진행·신청 방식이 언어별로 유지되는가?</li></ul>
+  <p>작업자별 진행 상태와 결과 회수 과정을 확인하세요. 두 작업만 맡겨도 컴퓨터의 여유 메모리에 따라 시작을 기다릴 수 있습니다.</p>
+  <p>결과: <code>submissions/parallel/영어.md</code>, <code>submissions/parallel/일본어.md</code>, <code>submissions/parallel/다국어안내.md</code></p>
+</section>
+<section id="guardrail">
+  <h2>5. 사용자 지정 차단 규칙 등록하기</h2>
+  <p><strong>정규식(Regular Expression)</strong>은 문자열에서 <strong>특정한 모양을 찾는 규칙</strong>입니다. 검색창에 번호 하나를 넣으면 그 번호만 찾지만, 정규식으로는 “숫자 6개 뒤에 숫자 7개가 오는 형태”를 한꺼번에 찾을 수 있습니다. 여기서는 그 형태가 명령문에 들어 있으면 실행을 차단하도록 설정합니다.</p>
+  <p><strong>설정 → 보안 → 거부된 명령 → 사용자 지정 차단</strong>에서 아래 규칙을 등록합니다.</p>
+  <label class="prompt-label" for="guard-pattern">정규식</label>
+  <textarea class="short-copy" id="guard-pattern" readonly>(?&lt;![0-9])[0-9]{6}-?[0-9]{7}(?![0-9])</textarea>
+  <div class="copy-actions"><button type="button" data-copy="guard-pattern">정규식 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+  <div class="note">
+    <strong>이 규칙 읽어 보기</strong>
+    <ul>
+      <li><code>[0-9]{6}</code>: 0~9 사이의 숫자가 6개 연속으로 나옵니다.</li>
+      <li><code>-?</code>: 하이픈(<code>-</code>)이 있어도 되고 없어도 됩니다.</li>
+      <li><code>[0-9]{7}</code>: 그 뒤에 숫자 7개가 이어집니다.</li>
+    </ul>
+    <p>앞뒤의 <code>(?&lt;![0-9])</code>와 <code>(?![0-9])</code>는 더 긴 숫자의 일부가 잘못 걸리지 않게 경계를 확인합니다. 따라서 <code>000000-0000000</code>과 <code>0000000000000</code>은 찾고, <code>******-*******</code>은 찾지 않습니다.</p>
+  </div>
+  <label class="prompt-label" for="guard-reason">차단 설명</label>
+  <textarea class="short-copy" id="guard-reason" readonly>명령문에 주민등록번호 형태의 숫자가 포함되어 있습니다.
+해당 값을 마스킹한 뒤 실행하세요.</textarea>
+  <div class="copy-actions"><button type="button" data-copy="guard-reason">차단 설명 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+</section>
+<section id="guardrail-test">
+  <h2>6. 명령의 차단과 통과 비교하기</h2>
+  <p>채팅에서 첫 요청을 실행합니다.</p>
+  <label class="prompt-label" for="prompt-blocked">첫 요청</label>
+  <textarea id="prompt-blocked" readonly>사용자 지정 차단 규칙을 확인해줘.
+다음 명령을 shell 도구로 한 번 실행해줘.
+명령이 차단되면 결과를 알려주고 끝내줘.
+
+printf '%s\n' '000000-0000000'</textarea>
+  <div class="copy-actions"><button type="button" data-copy="prompt-blocked">첫 요청 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+  <p>도구 호출의 차단 상태와 사유를 확인한 뒤 둘째 요청을 실행합니다.</p>
+  <label class="prompt-label" for="prompt-masked">둘째 요청</label>
+  <textarea id="prompt-masked" readonly>이번에는 마스킹한 문자열로 다음 명령을 한 번 실행해줘.
+
+printf '%s\n' '******-*******'</textarea>
+  <div class="copy-actions"><button type="button" data-copy="prompt-masked">둘째 요청 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+  <p>첫 호출은 규칙으로 차단되고, 둘째 호출은 <code>******-*******</code>를 출력하는지 비교합니다. 이 규칙은 명령문 등에 포함된 숫자 모양을 검사합니다. 파일 내용 전체를 검사하거나 실제 주민등록번호의 유효성을 판별하는 기능은 아닙니다.</p>
+  <p>이어서 <strong>보안 → 다층 방어 아키텍처</strong>에서 실행 공간, 실행 전 검사, 출력 마스킹·기록이 어느 지점을 보호하는지 살펴봅니다.</p>
+</section>
+<section id="question">
+  <h2>7. 질문 카드로 사람의 선택 체험하기</h2>
+  <p>누구에게 얼마나 자세히 안내할지는 목적과 독자에 따라 달라집니다. 번역을 마친 채팅에서 질문 카드를 열어 이 판단을 직접 내려 봅니다.</p>
+  <label class="prompt-label" for="prompt-question">질문 카드 프롬프트</label>
+  <textarea id="prompt-question" readonly>practice/모임조건.md와 submissions/parallel/다국어안내.md를 읽어줘.
+안내의 독자와 설명 깊이를 내가 선택하도록 ask_question 질문 카드를 보여줘.
+선택지는 '처음 참가자를 위한 상세 안내'와 '기존 참가자를 위한 핵심 안내'로 해줘.
+처음 참가자를 위한 상세 안내를 기본 추천으로 표시해줘.
+각 선택지의 차이를 한 문장으로 설명해줘.
+질문 카드를 게시한 뒤 이번 턴을 끝내줘.
+다음 사용자 메시지로 답을 받으면 선택한 안내 유형과 설명 깊이를 2~3줄로
+submissions/hitl/선택기록.md에 저장해줘.</textarea>
+  <div class="copy-actions"><button type="button" data-copy="prompt-question">프롬프트 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+  <p>질문 카드에서 하나를 고르고 <code>submissions/hitl/선택기록.md</code>를 확인합니다. 어떤 차이를 보고 선택했는지, AI의 기본 추천과 자신의 선택이 같았는지 생각해 보세요.</p>
+</section>
+<section id="approval">
+  <h2>8. 승인 대기와 사람의 검토 관찰하기</h2>
+  <p>HITL(Human-in-the-Loop)은 자동화 과정에서 사람이 판단할 지점을 두고 그 결정을 다음 행동에 연결하는 설계입니다. 목적이 모호하거나 실행 결과의 책임이 클 때, 판단에 필요한 내용을 보여주고 사람이 개입할 수 있어야 합니다.</p>
+  <p><strong>강사가 준비한 Task Runner 화면</strong>에서 다음 흐름을 관찰합니다.</p>
+  <ol><li><strong>승인 대기:</strong> 다음 작업의 실행 시도가 시작되지 않은 상태와 승인·거부 버튼을 확인합니다.</li><li><strong>사람의 검토:</strong> 검토할 내용과 실행될 행동을 읽고, 승인할 근거를 말해 봅니다.</li><li><strong>승인 후 진행:</strong> 승인 버튼을 누른 뒤 다음 작업이 실행되는지 확인합니다.</li></ol>
+  <p>질문 카드는 사람에게 업무 기준을 받고, 승인 지점은 다음 행동의 실행 여부를 통제합니다. 관찰할 핵심은 <strong>승인 전에는 다음 행동이 실행되지 않고, 승인 후에 진행되는 연결</strong>입니다.</p>
+  <h3>직접 시스템을 만들 때 정할 것</h3>
+  <ul><li><strong>누가:</strong> 판단할 권한과 책임을 가진 사람은 누구인가?</li><li><strong>언제:</strong> 업무의 어느 판단 지점에서, 어떤 행동 전에 개입을 요청할 것인가?</li><li><strong>판단 근거와 선택지:</strong> 어떤 내용·변경점·영향을 보여주고 무엇을 선택하게 할 것인가?</li><li><strong>수정과 거부:</strong> 수정 요청이나 거부를 받으면 어느 단계로 돌아갈 것인가?</li><li><strong>무응답과 재개:</strong> 답이 없을 때 어떤 상태로 기다리며, 답을 받은 뒤 어디서 이어갈 것인가?</li></ul>
+</section>
+<section id="mission-submission">
+  <h2>9. 미션 제출물 저장하기</h2>
+  <p><strong>미션 · 공용 장비 대여 점검</strong><br>여러분은 학과 장비 대여 담당자입니다. 반납과 연장 요청으로 달라지는 현황을 반복해서 점검하고, 후속 처리에서 사람이 판단해야 할 지점을 정합니다.</p>
+  <p>앞 실습에서 배운 기능을 사용하되, <strong>이번 작업 지시는 직접 작성</strong>합니다. 아래 빈칸에 쓰면서 진행한 뒤 마지막에 제출 기록 파일로 내려받으세요.</p>
+  <nav class="mission-route" aria-label="미션 순서"><a href="#mission-data">① 자료 읽기</a><a href="#mission-write">② 지시 작성</a><a href="#mission-register">③ 등록·촬영</a><a href="#mission-compare">④ 결과 비교</a><a href="#mission-hitl">⑤ DAG·HITL</a><a href="#mission-finish">⑥ 제출</a></nav>
+  <p class="note"><strong>아래 입력칸은 내 작업 노트입니다.</strong> 현재 브라우저의 이 주소에 임시 저장됩니다. 앱에는 복사해 넣고, 제출할 때는 <a href="#mission-finish">제출기록.md 다운로드</a>로 파일을 저장합니다. 브라우저에 쓴 것만으로 제출 폴더의 파일이 바뀌지는 않습니다.</p>
+  <p id="mission-save-status" class="mission-save-status" role="status" aria-live="polite">아직 작성한 내용이 없습니다.</p>
+
+  <article class="mission-step" id="mission-data">
+    <h3>9-1. 입력자료와 제출 폴더 확인하기</h3>
+    <p>Finder 또는 파일 탐색기에서 <code>week06 → practice → mission</code>을 엽니다. 아래 세 자료를 읽고 어떤 내용을 점검할지 정하세요. 링크로 내용을 읽을 수 있고, 수정할 때는 컴퓨터에 저장된 파일을 편집기에서 엽니다.</p>
+    <div class="table-wrap"><table><thead><tr><th scope="col">읽을 파일</th><th scope="col">찾아볼 내용</th></tr></thead><tbody>
+      <tr><th scope="row"><a href="practice/mission/운영메모.md">운영메모.md</a></th><td>업무 기준일, 반납·연장 처리 기준, 담당자의 역할</td></tr>
+      <tr><th scope="row"><a href="practice/mission/대여현황.csv">대여현황.csv</a></th><td>장비별 상태, 반납 예정일, 다음 예약</td></tr>
+      <tr><th scope="row"><a href="practice/mission/담당자에게_온_요청.md">담당자에게_온_요청.md</a></th><td>이용자의 요청과 사유, 추가로 판단할 내용</td></tr>
+    </tbody></table></div>
+    <p><a href="practice/mission/변경사항.md">변경사항.md</a>는 <strong>첫 결과를 저장한 뒤</strong> 열어 입력자료에 반영합니다. 처음부터 변경을 적용하지 마세요.</p>
+    <p>이어서 <code>week06 → submissions → mission</code> 폴더를 열어 둡니다. 실행 결과와 제출 파일을 이곳에 모읍니다. <a href="submissions/mission/제출기록.md">제출기록.md</a>는 아래 입력칸을 작성하고 내려받아 채워도 되고, 편집기에서 직접 작성해도 됩니다.</p>
+  </article>
+
+  <article class="mission-step" id="mission-write">
+    <h3>9-2. 스케줄에 넣을 지시 직접 작성하기</h3>
+    <p>매번 최신 자료를 읽고 점검 보고서를 만드는 작업을 설계하세요. 아래 질문에 답이 들어가도록 <strong>자신의 문장으로</strong> 지시를 씁니다.</p>
+    <ul>
+      <li><strong>어디를 읽는가?</strong> 내 <code>week06</code> 절대경로와 읽을 파일의 경로가 들어 있는가? 전체 경로는 <a href="#schedule-path">3-1의 방법</a>으로 확인합니다.</li>
+      <li><strong>무엇을 점검하는가?</strong> 운영 기준에 따라 확인할 상태와 요청, 보고서에 담을 항목을 정했는가?</li>
+      <li><strong>어느 시점이 기준인가?</strong> 운영메모의 업무 기준일시와 실제 실행 시각을 구분했는가?</li>
+      <li><strong>다시 실행하면?</strong> 이전 답을 재사용하지 않고 최신 입력 파일을 다시 읽도록 했는가?</li>
+      <li><strong>어디에 남기는가?</strong> <code>submissions/mission/점검결과.md</code>에 저장하고 실행할 때마다 갱신하도록 했는가?</li>
+    </ul>
+    <p>이 스케줄의 역할은 <strong>현황 점검과 보고서 작성</strong>입니다. 연장 승인이나 대여 기한 변경은 뒤의 DAG에서 설계합니다.</p>
+    <div class="mission-fields">
+      <label for="mission-name">내 스케줄 작업명</label>
+      <input id="mission-name" data-mission-field data-required-label="작업명" type="text" autocomplete="off">
+      <label for="mission-cycle">실제로 설정한 실행 간격 또는 요일·시각·시간대</label>
+      <p class="field-hint" id="mission-cycle-hint">실습에서는 5분 간격으로 동작을 확인합니다. 특정 시각을 지정했다면 시간대도 적으세요.</p>
+      <input id="mission-cycle" data-mission-field data-required-label="실행 주기" type="text" autocomplete="off" aria-describedby="mission-cycle-hint">
+      <label for="mission-prompt">내가 작성한 스케줄 프롬프트</label>
+      <p class="field-hint" id="mission-prompt-hint">직접 작성 → 복사 → Kiro Crew의 스케줄 ‘메시지’ 칸에 붙여 넣습니다. 앱에서 문장을 고쳤다면 이 칸에도 최종 내용을 옮겨 둡니다.</p>
+      <textarea id="mission-prompt" class="mission-long" data-mission-field data-required-label="스케줄 프롬프트" aria-describedby="mission-prompt-hint" spellcheck="false"></textarea>
+      <div class="copy-actions"><button type="button" data-copy="mission-prompt">내 프롬프트 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+    </div>
+  </article>
+
+  <article class="mission-step" id="mission-register">
+    <h3>9-3. 스케줄 등록하고 설정 화면 찍기</h3>
+    <ol>
+      <li>Kiro Crew의 <strong>스케줄 → 작업 추가 → 새 작업</strong>을 엽니다.</li>
+      <li><strong>이름</strong>에는 위에서 정한 작업명을, <strong>메시지</strong>에는 직접 작성한 프롬프트를 붙여 넣습니다. 작업 폴더를 고르는 별도 칸은 없으므로 <strong>절대경로가 메시지 안에 있는지</strong> 확인합니다.</li>
+      <li><strong>실행 간격 → 5 → 분</strong>, 에이전트 <strong>default</strong>로 설정합니다. 아래로 내려 승인 항목을 <strong>자동 승인</strong>으로 선택합니다. 파일 읽기·쓰기 승인을 기다리며 멈추지 않도록 하는 설정입니다.</li>
+      <li>메시지와 입력 파일만으로 수행하는 작업이므로 <strong>최소 컨텍스트</strong>를 켭니다. <strong>만들기</strong>로 저장한 뒤 등록된 작업의 상세 화면을 다시 엽니다.</li>
+    </ol>
+    <figure class="mission-figure"><a href="assets/mission/schedule-fields.png" target="_blank" rel="noopener"><img src="assets/mission/schedule-fields.png" loading="lazy" alt="Kiro Crew 새 작업 화면. 이름, 메시지, 실행 간격, 에이전트 입력란이 위에서부터 배치되어 있다."></a><figcaption><strong>입력 위치:</strong> 이름과 메시지는 별도 칸입니다. 사진은 위치 참고용이며, 본인 작업의 간격은 <strong>5분</strong>으로 설정합니다. 이미지를 누르면 크게 볼 수 있습니다.</figcaption></figure>
+    <details><summary>자동 승인 설정 위치 보기</summary><figure class="mission-figure"><a href="assets/mission/schedule-approval.png" target="_blank" rel="noopener"><img src="assets/mission/schedule-approval.png" loading="lazy" alt="스케줄 상세 화면 아래쪽 승인 드롭다운이 자동 승인으로 선택되어 있다."></a><figcaption>아래쪽 ‘승인’에서 <strong>자동 승인</strong>을 선택합니다. 해당 스케줄의 도구 사용에 적용하는 설정입니다.</figcaption></figure></details>
+    <p class="mission-output"><strong>캡처 1 · 스케줄설정.png</strong><br>저장된 작업의 상세 화면에서 <strong>내 작업명과 실행 주기</strong>를 한 장에 보이게 찍습니다. 글자를 읽을 수 있는 크기로 저장하세요. 입력란이 비어 있는 새 작업 화면은 제출하지 않습니다.</p>
+    <details><summary>스크린샷을 파일로 저장하는 방법</summary>
+      <p><strong>Windows:</strong> <kbd>Win + Shift + S</kbd> → 영역 선택 → 캡처 알림을 열어 저장합니다. 파일 형식은 PNG, 이름은 <code>스케줄설정.png</code>로 지정합니다.</p>
+      <p><strong>Mac:</strong> <kbd>⌘ + Shift + 4</kbd> → 영역 선택 → 바탕 화면 등에 생긴 PNG 파일의 이름을 <code>스케줄설정.png</code>로 바꿉니다.</p>
+      <p>완성된 파일을 <code>week06/submissions/mission/</code>으로 옮깁니다. 뒤의 DAG 화면도 같은 방법으로 <code>DAG_HITL.png</code>를 저장합니다.</p>
+    </details>
+  </article>
+
+  <article class="mission-step" id="mission-compare">
+    <h3>9-4. 첫 결과를 보관한 뒤 다시 실행하기</h3>
+    <ol>
+      <li>첫 예약 실행을 기다리거나 <strong>지금 실행</strong>을 누릅니다. 채팅 세션의 진행 상황을 보고 완료를 확인합니다.</li>
+      <li><code>week06/submissions/mission/점검결과.md</code>를 엽니다. 채팅에 답이 나오는 것과 별도로 <strong>이 파일이 실제로 생성되었는지</strong> 확인합니다.</li>
+      <li>다음 자동 실행 전에 작업을 <strong>일시 중지</strong>합니다. <code>점검결과.md</code>를 복사·붙여넣기하고, 복사본 이름을 <strong>첫결과.md</strong>로 바꿉니다. 원래 파일은 그대로 둡니다.</li>
+      <li><a href="practice/mission/변경사항.md">변경사항.md</a>를 읽습니다. <strong>편집기에서 <code>practice/mission/대여현황.csv</code>를 직접 열어</strong> 지정된 행과 열의 값을 바꾸고 저장합니다. 변경 내용을 프롬프트에 덧붙이는 것이 아니라 입력 파일 자체를 수정합니다.</li>
+      <li>같은 스케줄을 다시 실행합니다. 일시 중지 상태에서 실행 버튼이 비활성화되면 재개한 뒤 <strong>지금 실행</strong>을 누릅니다. <strong>작업 메시지는 바꾸지 않습니다.</strong></li>
+      <li>완료 후 갱신된 <code>점검결과.md</code>를 복사해 <strong>재실행결과.md</strong>로 보관하고, 스케줄을 일시 중지합니다.</li>
+    </ol>
+    <details><summary>CSV를 직접 수정하고 저장하기</summary><p>VS Code 등 텍스트 편집기에서 <code>대여현황.csv</code>를 엽니다. 첫 줄이 열 이름입니다. 변경사항에 지정된 대여 ID의 행을 찾고, 해당 열의 값만 수정합니다. 쉼표는 열을 나누는 기호이므로 지우거나 추가하지 않습니다. <kbd>Ctrl + S</kbd> 또는 <kbd>⌘ + S</kbd>로 저장한 뒤 다시 실행하세요.</p></details>
+    <p>두 결과 파일을 나란히 열어 비교합니다. 어떤 입력이 달라졌고 그 변화가 보고서 어디에 나타났는지 적으세요. 실행 시각뿐 아니라 <strong>업무 내용의 변화</strong>를 찾습니다.</p>
+    <div class="mission-fields">
+      <label for="mission-change">내가 변경한 입력 파일과 값</label>
+      <p class="field-hint" id="mission-change-hint">파일명, 수정한 행의 ID, 열 이름, 변경 전·후 값을 적습니다.</p>
+      <textarea id="mission-change" data-mission-field data-required-label="입력 변경 내용" aria-describedby="mission-change-hint"></textarea>
+      <label for="mission-difference">첫 결과와 재실행 결과에서 달라진 부분</label>
+      <p class="field-hint" id="mission-difference-hint">실제로 생성된 두 파일을 읽고, 입력 변경과 연결되는 차이를 적습니다.</p>
+      <textarea id="mission-difference" data-mission-field data-required-label="결과의 차이" aria-describedby="mission-difference-hint"></textarea>
+    </div>
+    <p class="mission-output"><strong>여기서 남기는 파일:</strong> <code>첫결과.md</code>, <code>재실행결과.md</code><br>두 보고서는 실행 결과 파일 그대로 보관합니다. 위 입력칸의 설명은 마지막에 <code>제출기록.md</code>에 들어갑니다.</p>
+  </article>
+
+  <article class="mission-step" id="mission-hitl">
+    <h3>9-5. DAG를 만들고 승인 지점 선택하기</h3>
+    <p>이번에는 점검 이후의 <strong>후속 처리</strong>를 설계합니다. 운영메모와 담당자에게 온 요청을 다시 읽고, 업무를 어떤 단계로 나눌지, 어떤 단계의 실행 전에 사람이 판단해야 할지 정하세요.</p>
+    <p>지난주 DAG를 만들 때처럼 <strong>Kiro Crew 채팅</strong>에서 Task Runner 작업 생성을 요청합니다. 아래에 작업 폴더, 읽을 자료, 단계별 할 일과 연결 순서, 각 단계의 결과 파일을 담아 작성합니다. <strong>우선 계획만 만들고, 내가 승인 설정을 마칠 때까지 실행하지 않도록</strong> 요청에 명시합니다. DAG에서 수정할 현황은 <code>submissions/mission/</code> 안의 작업용 사본으로 정해 두면 앞의 비교 결과를 보존할 수 있습니다.</p>
+    <div class="mission-fields">
+      <label for="mission-dag-prompt">내 DAG 생성 요청</label>
+      <p class="field-hint" id="mission-dag-hint">직접 작성 → 복사 → Kiro Crew 채팅 입력창에 붙여 넣습니다. 이 문장은 스케줄 메시지와 별개입니다.</p>
+      <textarea id="mission-dag-prompt" class="mission-long" data-mission-field aria-describedby="mission-dag-hint" spellcheck="false"></textarea>
+      <div class="copy-actions"><button type="button" data-copy="mission-dag-prompt">내 DAG 요청 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+    </div>
+    <ol>
+      <li>생성된 Task Runner 작업을 열고 단계별 할 일과 순서를 확인합니다. 의도와 다르면 채팅에서 수정을 요청합니다.</li>
+      <li><strong>실행 전에</strong> 승인 설정에서 내가 선택한 단계에 <strong>승인 필요</strong>를 켭니다. 아래 사진에서 체크 위치를 확인하세요.</li>
+      <li>단계 이름과 승인 설정이 함께 보이도록 <strong>DAG_HITL.png</strong>를 찍고 <code>submissions/mission/</code>에 저장합니다.</li>
+      <li>그 단계의 행동과 사람이 판단해야 하는 이유를 아래에 적습니다. 이 미션에서는 <strong>승인 지점의 설정과 이유</strong>를 제출합니다.</li>
+    </ol>
+    <figure class="mission-figure"><a href="assets/mission/dag-approval.jpg" target="_blank" rel="noopener"><img src="assets/mission/dag-approval.jpg" loading="lazy" alt="Task Runner DAG에서 선택한 단계와 오른쪽 설정 패널의 단계 이름, 승인 필요 체크박스가 함께 보인다."></a><figcaption><strong>체크 위치 참고:</strong> 사진은 앞 실습의 작업입니다. 제출할 때는 <strong>본인이 만든 장비 대여 작업의 단계 이름과 승인 설정</strong>이 함께 보여야 합니다. 어떤 단계를 선택할지는 직접 결정합니다.</figcaption></figure>
+    <div class="mission-fields">
+      <label for="mission-hitl-stage">승인 필요로 설정한 단계 이름</label>
+      <textarea id="mission-hitl-stage" data-mission-field data-required-label="승인 단계 이름"></textarea>
+      <label for="mission-hitl-action">그 단계에서 실행될 행동</label>
+      <p class="field-hint" id="mission-action-hint">어떤 자료나 상태를 어떻게 바꾸는지, 승인하면 무엇이 실행되는지 적습니다.</p>
+      <textarea id="mission-hitl-action" data-mission-field data-required-label="승인 단계의 행동" aria-describedby="mission-action-hint"></textarea>
+      <label for="mission-hitl-reason">이 지점에 사람의 판단이 필요한 이유 · 2~3문장</label>
+      <p class="field-hint" id="mission-reason-hint">업무 기준과 요청의 어떤 부분을 사람이 판단해야 하는지 설명합니다. 여러 단계에 설정했다면 단계 이름별로 행동과 이유를 구분합니다.</p>
+      <textarea id="mission-hitl-reason" data-mission-field data-required-label="HITL 선택 이유" aria-describedby="mission-reason-hint"></textarea>
+    </div>
+  </article>
+
+  <article class="mission-step" id="mission-finish">
+    <h3>9-6. 작성한 기록을 파일로 저장하기</h3>
+    <p>위에 작성한 작업명, 실행 주기, 실제 프롬프트, 결과 비교, HITL 선택 이유를 하나의 기록 파일로 모읍니다. <strong>앱에서 최종 사용한 내용과 같은지</strong> 확인한 뒤 내려받으세요.</p>
+    <p id="mission-completeness" class="mission-output" role="status" aria-live="polite"></p>
+    <div class="copy-actions"><button type="button" id="mission-download">제출기록.md 다운로드</button><button type="button" data-copy="mission-record">기록 전체 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+    <p id="mission-download-status" class="field-hint" role="status" aria-live="polite"></p>
+    <details><summary>다운로드할 제출 기록 미리보기</summary><label class="prompt-label" for="mission-record">입력한 내용으로 만든 기록</label><textarea id="mission-record" readonly></textarea></details>
+    <ol>
+      <li>다운로드된 <code>제출기록.md</code>를 <strong>다운로드 폴더</strong>에서 찾습니다. 저장 위치를 물으면 처음부터 <code>week06/submissions/mission/</code>을 선택해도 됩니다.</li>
+      <li><code>week06/submissions/mission/제출기록.md</code>가 <strong>빈 양식이면</strong> 내려받은 파일로 교체합니다. <strong>이미 작성한 내용이 있다면</strong> 먼저 두 파일을 열어 필요한 내용을 합친 뒤 저장합니다.</li>
+      <li>최종 파일 이름을 <strong>제출기록.md</strong>로 맞춥니다. 이름에 <code>(1)</code> 등이 붙지 않았는지, 파일을 열었을 때 직접 작성한 문장이 들어 있는지 확인합니다.</li>
+    </ol>
+    <h4>제출 파일은 다섯 개</h4>
+    <div class="table-wrap"><table><thead><tr><th scope="col">파일</th><th scope="col">만드는 방법</th><th scope="col">확인할 내용</th></tr></thead><tbody>
+      <tr><th scope="row"><code>제출기록.md</code></th><td>이 페이지에서 작성 후 다운로드하거나 직접 편집</td><td>실제 프롬프트 · 입력과 결과의 변화 · HITL 이유</td></tr>
+      <tr><th scope="row"><code>스케줄설정.png</code></th><td>9-3의 앱 화면 캡처</td><td>내 작업명과 실행 주기</td></tr>
+      <tr><th scope="row"><code>첫결과.md</code></th><td>변경 전 점검결과.md를 복사</td><td>첫 실행 결과</td></tr>
+      <tr><th scope="row"><code>재실행결과.md</code></th><td>변경 후 점검결과.md를 복사</td><td>바뀐 입력을 반영한 결과</td></tr>
+      <tr><th scope="row"><code>DAG_HITL.png</code></th><td>9-5의 앱 화면 캡처</td><td>내 단계 이름과 승인 설정</td></tr>
+    </tbody></table></div>
+    <pre><code>week06/
+└─ submissions/
+   └─ mission/
+      ├─ 제출기록.md
+      ├─ 스케줄설정.png
+      ├─ 첫결과.md
+      ├─ 재실행결과.md
+      └─ DAG_HITL.png</code></pre>
+    <p><code>점검결과.md</code>와 DAG 작업용 파일은 같은 폴더에 남아 있어도 됩니다. 위 다섯 파일이 제출 대상입니다.</p>
+    <h4>본인 저장소에서 제출 확인하기</h4>
+    <ol><li>다섯 파일을 본인 실습 저장소의 <strong>main</strong>에 커밋하고 <strong>본인 GitHub 원격 저장소(origin)</strong>로 푸시합니다. 다른 브랜치에서 작업했다면 먼저 main에 반영합니다. 터미널에서 <code>week06</code> 폴더로 이동한 뒤 아래 명령을 실행합니다.
+      <label class="prompt-label" for="submit-commands">제출 명령</label>
+      <textarea id="submit-commands" readonly>git branch --show-current
+git add submissions/
+git diff --cached --stat
+git commit -m "docs: 6주차 실습 제출"
+git push origin main</textarea>
+      <div class="copy-actions"><button type="button" data-copy="submit-commands">제출 명령 복사</button><span class="copy-feedback" role="status" aria-live="polite"></span></div>
+      <p>첫 줄의 출력이 <code>main</code>인지 확인합니다. <code>git diff --cached --stat</code>은 커밋에 들어갈 파일 목록을 보여 줍니다. 다섯 파일이 목록에 있는지 확인하세요. <code>origin</code>은 내 GitHub 저장소입니다.</p></li><li>GitHub 웹에서 main의 아래 폴더를 열고, 다섯 파일을 각각 눌러 내용과 이미지가 보이는지 확인합니다.</li></ol>
+    <pre><code>class/kookmin-2026-2/ai-platform-development/week06/submissions/mission/</code></pre>
+  </article>
+</section>
+</main>
+</div>
+<footer>국민대 AI플랫폼개발 6주차 · 학생용 시작하기</footer>
+</div>
+<script>
+'use strict';
+const steps = [...document.querySelectorAll('main section')];
+const progressBar = document.getElementById('progress-bar');
+const progressLabel = document.getElementById('progress-label');
+progressBar.max = steps.length;
+function updateProgress() {
+  const count = document.querySelectorAll('[data-step]:checked').length;
+  progressBar.value = count;
+  progressLabel.textContent = `내 진행 · ${count} / ${steps.length}`;
+}
+steps.forEach(section => {
+  const label = document.createElement('label');
+  label.className = 'done-row';
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  input.dataset.step = section.id;
+  label.append(input, document.createTextNode('이 단계를 직접 확인했습니다.'));
+  section.append(label);
+  input.addEventListener('change', updateProgress);
+});
+updateProgress();
+const links = [...document.querySelectorAll('.sidebar nav a')];
+function updateStep() {
+  let current = steps[0];
+  for (const section of steps) {
+    if (section.getBoundingClientRect().top <= 120) current = section;
+  }
+  links.forEach(link => {
+    if (link.hash === '#' + current.id) link.setAttribute('aria-current', 'step');
+    else link.removeAttribute('aria-current');
+  });
+}
+window.addEventListener('scroll', updateStep, {passive: true});
+updateStep();
+const prompts = [...document.querySelectorAll('textarea')];
+prompts.forEach(field => {
+  const printCopy = document.createElement('pre');
+  printCopy.className = 'print-copy';
+  printCopy.textContent = field.value;
+  field.insertAdjacentElement('afterend', printCopy);
+  field.classList.add('has-print-copy');
+});
+function fitPrompts() {
+  prompts.forEach(field => {
+    field.style.height = 'auto';
+    field.style.height = (field.scrollHeight + 2) + 'px';
+  });
+}
+fitPrompts();
+window.addEventListener('resize', () => { fitPrompts(); updateStep(); });
+document.querySelectorAll('[data-copy]').forEach(button => {
+  const initialLabel = button.textContent;
+  button.addEventListener('click', async () => {
+    const field = document.getElementById(button.dataset.copy);
+    const feedback = button.parentElement.querySelector('.copy-feedback');
+    if (field.hasAttribute('data-mission-field') && !field.value.trim()) {
+      feedback.textContent = '위 입력칸에 직접 작성한 뒤 복사하세요.';
+      field.focus();
+      return;
+    }
+    button.disabled = true;
+    feedback.textContent = '';
+    let copied = false;
+    try {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        await navigator.clipboard.writeText(field.value);
+        copied = true;
+      }
+    } catch (_) {}
+    if (!copied) {
+      field.focus();
+      field.select();
+      field.setSelectionRange(0, field.value.length);
+      try { copied = document.execCommand('copy') === true; } catch (_) {}
+    }
+    if (copied) {
+      button.textContent = '복사 완료';
+      feedback.textContent = '내용을 복사했습니다.';
+    } else {
+      button.textContent = initialLabel;
+      feedback.textContent = '내용을 선택했습니다. Ctrl+C 또는 ⌘C로 직접 복사하세요.';
+    }
+    button.disabled = false;
+  });
+});
+</script>
+<script src="assets/mission/workbook.js"></script>
+</body>
+</html>
