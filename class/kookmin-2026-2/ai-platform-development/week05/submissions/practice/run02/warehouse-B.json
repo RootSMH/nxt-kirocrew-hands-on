@@ -1,0 +1,10 @@
+{
+  "source_file": "warehouse-b.md",
+  "warehouse": "B",
+  "total": 16,
+  "items": {
+    "mug": 5,
+    "bottle": 9,
+    "hub": 2
+  }
+}

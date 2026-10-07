@@ -1,0 +1,10 @@
+{
+  "source_file": "warehouse-c.md",
+  "warehouse": "C",
+  "total": 16,
+  "items": {
+    "sensor": 4,
+    "hub": 11,
+    "cable": 1
+  }
+}
